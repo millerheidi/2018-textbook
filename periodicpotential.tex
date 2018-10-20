@@ -75,7 +75,7 @@ The eigenstates of the wave equation can be chosen so that, for every $\boldsymb
 Ashcroft and Mermin provide two proofs of Bloch's Theorem, which we will reproduce below.
 
 \subsection{Proof 1 of Bloch's Theorem from Quantum Mechanics}
-This proof is valid even when $\psi_{\boldsymbol{k}}$ is degenerate, i.e. when there is are other wavefunctions with the same energy and wavevector as $\psi_{\boldsymbol{k}}$.
+This proof is valid even when $\psi_{\boldsymbol{k}}$ is degenerate, i.e. when there are other wavefunctions with the same energy and wavevector as $\psi_{\boldsymbol{k}}$.
 
 For each Bravais lattice vector $\boldsymbol{R}$, let $T_{\boldsymbol{R}}$ be the translation operator, which, when operating on any function $f(\boldsymbol{r})$, shifts the argument by $\boldsymbol{R}$:
 
@@ -141,6 +141,48 @@ T_{\boldsymbol{R}'} T_{\boldsymbol{R}} \psi
 = c(\boldsymbol{R} + \boldsymbol{R'}) 
 \end{equation}
 
-In order to satisfy Bloch's theorem, in the form of eq. ({eq:bloch_theorem_restate}), we can come up with an expression for the exponential, $e^{i\boldsymbol{k} \boldsymbol{R}$ in terms of the eigenvalue through the following derivation:
+In order to satisfy Bloch's theorem, in the form of eq. (\ref{eq:bloch_theorem_restate}), we can come up with an expression for the exponential, $e^{i\boldsymbol{k} \boldsymbol{R}}$ in terms of the eigenvalue, $c(\boldsymbol{R})$ through the following derivation.
+
+We first write an expression for $\boldsymbol{R}$ as the Bravais lattice vector given by
+\begin{equation} \label{eq:r_express}
+\boldsymbol{R} = n_{1} \boldsymbol{a}_{1}
++ n_{2} \boldsymbol{a}_{2}
++ n_{3} \boldsymbol{a}_{3}
+\end{equation}
+
+where $\boldsymbol{a_{i}}$ are the three primitive vectors of the Bravais lattice, which can be captured by $\boldsymbol{c}$: \todo{Can someone please explain how we can express $c$ this way because I do not get it! Thanks.}
+
+\begin{equation} \label{eq:c_exp}
+c(\boldsymbol{a}_{i}) = e^{2 \pi i x_{i}}
+\end{equation}
+
+by a suitable choice \todo{yeah I don't know what ``suitable'' means. Please explain} of $x_i$. From successive applications of \ref{eq:c_relation} that
+
+\begin{equation} \label{eq:c_mult}
+c(\boldsymbol{R})
+= c(\boldsymbol{a}_1)^{n_1}
+c(\boldsymbol{a}_2)^{n_2}
+c(\boldsymbol{a}_3)^{n_3}
+\end{equation}
+
+and since
+\begin{equation} \label{eq:k_with_bi}
+\boldsymbol{k} = x_1 \boldsymbol{b}_1
++ x_2\boldsymbol{b}_2
++ x_3 \boldsymbol{b}_3
+\end{equation}
+
+where $b_i$ are the reciprocal lattice vectors satisfying
+\begin{equation} \label{eq:recip_b}
+\boldsymbol{b_i \cdot a_j}
+= 2 \pi \delta_{ij}
+\end{equation}
+
+this means that
+\begin{equation} \label{eq:c(R)}
+c(\boldsymbol{R}) 
+= e^{i \boldsymbol{k} \cdot \boldsymbol{R}}
+\end{equation}
+
 
 
