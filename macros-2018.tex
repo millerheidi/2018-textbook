@@ -1,0 +1,383 @@
+%-----------------------------------------------------------------------------------------------
+%  macros-2018.tex
+%  Alastair McLean
+%  2018 01 04
+%-----------------------------------------------------------------------------------------------
+
+
+%-----------------------------------------------------------------------------------------------
+%  MACROS FOR SETTING UP PROBLEMS
+%  Define locationofproblems in the source file
+%-----------------------------------------------------------------------------------------------
+\newcommand{\setupproblem}[3]{\noindent\textbf{Problem #1} \hfill \emph{#2}\\
+\input{\locationofproblems/#3}}
+
+\newcommand{\setupproblemcaps}[3]{\caps{Problem #1} \hfill \emph{#2}\\
+\input{\locationofproblems/#3}}
+
+
+%-----------------------------------------------------------------------------------------------
+%  MARGINNOTE
+%-----------------------------------------------------------------------------------------------
+\newcommand{\marginnote}[1]{\marginpar{\small #1}}
+
+
+%-----------------------------------------------------------------------------------------------
+%  MINIPAGE
+%-----------------------------------------------------------------------------------------------
+\newcommand{\minipages}[6]{
+\hspace{#1\linewidth}
+\begin{minipage}[c]{#2\linewidth}
+{#5}
+\end{minipage}
+\hspace{#3\linewidth}
+\begin{minipage}[c]{#4\linewidth}
+{#6}
+\end{minipage}
+}
+
+
+%-----------------------------------------------------------------------------------------------
+%  SHIFTRIGHT
+%-----------------------------------------------------------------------------------------------
+\newcommand{\shiftright}[3]{
+\hspace{#1\linewidth}
+\begin{minipage}[c]{#2\linewidth}
+{#3}
+\end{minipage}
+}
+
+
+%-----------------------------------------------------------------------------------------------
+%  QUANTUM MECHANICS
+%-----------------------------------------------------------------------------------------------
+\newcommand{\blank}[1]{\placefigure{blank.pdf}{#1}} 
+\newcommand{\curlybrackets}[1]{\{{#1}\}} 
+\newcommand{\bra}[1]{\langle {#1}|} 
+\newcommand{\braket}[2]{\langle {#1}|{#2} \rangle} 
+\newcommand{\braOket}[3]{\langle {#1}|{#2}|{#3} \rangle} 
+\newcommand{\commutator}[2]{[ {#1},{#2} ]} 
+\newcommand{\expectation}[1]{\langle {#1} \rangle} 
+\newcommand{\innerproduct}[2]{( {#1}|{#2} )} 
+\newcommand{\ket}[1]{| {#1} \rangle} 
+\newcommand{\momentumoperator}{-i\hbar\partial_x}
+\newcommand{\QM}{Quantum Mechanics}
+\newcommand{\Hamiltonian}{\hat H}
+\newcommand{\ashcroft}{Ashcroft and Mermin}
+\newcommand{\ashmer}{\textbf{am}}
+
+
+%-----------------------------------------------------------------------------------------------
+%  ASHCROFT MERMIN
+%-----------------------------------------------------------------------------------------------
+\newcommand{\ashcroftmermin}[1]{{\textbf{am} #1}} 
+
+%-----------------------------------------------------------------------------------------------
+%  COLORS BASIC
+%-----------------------------------------------------------------------------------------------
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\yellow}[1]{{\color{yellow}#1}}
+
+%-----------------------------------------------------------------------------------------------
+%  COLORS DVIPS
+%-----------------------------------------------------------------------------------------------
+\newcommand{\dandelion}[1]{{\color{Dandelion}#1}}
+\newcommand{\emerald}[1]{{\color{Emerald}#1}}
+\newcommand{\gray}[1]{{\color{Gray}#1}}
+
+%-----------------------------------------------------------------------------------------------
+%  COLORS SVGNAMES
+%-----------------------------------------------------------------------------------------------
+\newcommand{\aqua}[1]{{\color{Aqua}#1}}
+\newcommand{\aquamarine}[1]{{\color{Aquamarine}#1}}
+\newcommand{\blueviolet}[1]{{\color{BlueViolet}#1}}
+\newcommand{\cadetblue}[1]{{\color{CadetBlue}#1}}
+\newcommand{\crimson}[1]{{\color{Crimson}#1}}
+\newcommand{\darkblue}[1]{{\color{DarkBlue}#1}}
+\newcommand{\darkgray}[1]{{\color{DarkGray}#1}}
+\newcommand{\darkgrey}[1]{{\color{DarkGrey}#1}}
+\newcommand{\darkmagenta}[1]{{\color{DarkMagenta}#1}}
+\newcommand{\darkolivegreen}[1]{{\color{DarkOliveGreen}#1}}
+\newcommand{\darkorange}[1]{{\color{DarkOrange}#1}}
+\newcommand{\darkturquoise}[1]{{\color{DarkTurquoise}#1}}
+\newcommand{\deeppink}[1]{{\color{DeepPink}#1}}
+\newcommand{\dimgray}[1]{{\color{DimGray}#1}}
+\newcommand{\dimgrey}[1]{{\color{DimGrey}#1}}
+\newcommand{\dodgerblue}[1]{{\color{DodgerBlue}#1}}
+\newcommand{\firebrick}[1]{{\color{FireBrick}#1}}
+\newcommand{\lightslategrey}[1]{{\color{LightSlateGrey}#1}}
+\newcommand{\midnightblue}[1]{{\color{MidnightBlue}#1}}
+\newcommand{\navyblue}[1]{{\color{NavyBlue}#1}}
+\newcommand{\orange}[1]{{\color{Orange}#1}}
+
+%-----------------------------------------------------------------------------------------------
+%  SPECIAL COLORS
+%-----------------------------------------------------------------------------------------------
+\newcommand{\colorone}[1]{{\color{DarkBlue}#1}}
+\newcommand{\colortwo}[1]{{\color{DarkOrange}#1}}
+\newcommand{\colorthree}[1]{{\color{FireBrick}#1}}
+\newcommand{\colorfour}[1]{{\color{DarkOliveGreen}#1}}
+
+\newcommand{\colorkeyword}[1]{{\color{Teal}#1}}
+%\newcommand{\colorkeyword}[1]{{\color{MidnightBlue}#1}}
+\newcommand{\colorimportant}[1]{{\color{DarkOrange}#1}}
+\newcommand{\colordefinition}[1]{{\color{DarkOrange}#1}}
+\newcommand{\colorperson}[1]{{\color{MidnightBlue}#1}}
+\newcommand{\colorname}[1]{{\color{MidnightBlue}#1}}
+
+\newcommand{\highlight}{\hl}
+
+
+% INTEGRALS
+\newcommand{\integral}[4]{\int_{#1}^{#2}{#3}{#4}} 
+\newcommand{\infiniteintegral}[2]{\int_{-\infty}^{\infty}{#1}{#2}} 
+ 
+% TABLES
+\newcommand{\e}{\\ \hline}
+
+
+%-----------------------------------------------------------------------------------------------
+%  QUOTATION MARKS
+%-----------------------------------------------------------------------------------------------
+\newcommand{\quotationmarks}[1]{{\lq\lq{#1}\rq\rq}{}}
+
+
+%-----------------------------------------------------------------------------------------------
+%  FIGURES
+%-----------------------------------------------------------------------------------------------
+\newcommand{\placefigure}[2]{\centerline{\includegraphics[width=#2 \columnwidth]{#1}}} 
+\newcommand{\placefigurenocenter}[2]{{\includegraphics[width=#2 \columnwidth]{#1}}} 
+\newcommand{\placeframedfigure}[2]{\begin{framed}\centerline{\includegraphics[width=#2 \columnwidth]{#1}}\end{framed}} 
+
+\newcommand{\placefigurewithcaption}[3]{
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=#2 \columnwidth]{#1}
+\caption{#3}
+\label{default}
+\end{center}
+\end{figure}
+} 
+
+
+\newcommand{\placefigurewithcaptionandlabel}[4]{
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=#2 \columnwidth]{#1}
+\caption{#3}
+\label{#4}
+\end{center}
+\end{figure}
+} 
+
+
+%-----------------------------------------------------------------------------------------------
+%  CRYSTAL STRUCTURES 
+%-----------------------------------------------------------------------------------------------
+\newcommand{\fcc}{fcc}
+\newcommand{\bcc}{bcc}
+\newcommand{\hcp}{hcp}
+\newcommand{\dhcp}{dhcp}
+\newcommand{\simplecubic}{sc}
+\newcommand{\simplehexagonal}{sh}
+
+
+
+%-----------------------------------------------------------------------------------------------
+%  SHORTHAND
+%-----------------------------------------------------------------------------------------------
+\newcommand{\abinitio}{{\it ab inito}}
+\newcommand{\boldit}[1]{{\bf #1}{}}
+\newcommand{\boldfont}[1]{{\bf #1}{}}
+\newcommand{\bsqrtthree}{{Si(111)-B($\sqrt 3{\times}\sqrt 3$)R30$^{\circ}$}}
+\newcommand{\sqrtthree}{{($\sqrt 3{\times}\sqrt 3$)R30$^{\circ}$}}
+\newcommand{\bsqrtthreeshort}{B$\sqrt 3$}
+\newcommand{\centeredtypewriter}[1]{\centerline{\texttt{ #1}{}}}
+\newcommand{\chemicalpotential}{\mu}
+\newcommand{\dt}{\frac{d}{dt}}
+\newcommand{\electronegativity}{\chi}
+\newcommand{\emphasise}[1]{{\em #1}{}}
+\newcommand{\emphasize}[1]{{\em #1}{}}
+\newcommand{\epsilonnaught}{\varepsilon_\circ}
+\newcommand{\etal}{{\it et al.}}
+\newcommand{\eom}{{EOM}}
+\newcommand{\equationshort}{{Eq.}}
+\newcommand{\fancy}[1]{{\em #1}{}}
+\newcommand{\fbd}{FBD}
+\newcommand{\hardness}{\eta}
+\newcommand{\infinity}{\infty}
+\newcommand{\kineticenergy}{\frac{1}{2}mv^2}
+\newcommand{\xa}{x$_a$}
+\newcommand{\xb}{x$_b$}
+\newcommand{\mone}{m$_1$}
+\newcommand{\mtwo}{m$_2$}
+\newcommand{\mthree}{m$_3$}
+\newcommand{\mfour}{m$_4$}
+\newcommand{\mfive}{m$_5$}
+\newcommand{\msix}{m$_6$}
+\newcommand{\mseven}{m$_7$}
+\newcommand{\meight}{m$_8$}
+\newcommand{\mnine}{m$_9$}
+\newcommand{\ma}{m$_a$}
+\newcommand{\mb}{m$_b$}
+\newcommand{\mc}{m$_c$}
+\newcommand{\md}{m$_d$}
+\newcommand{\me}{m$_e$}
+\newcommand{\mf}{m$_f$}
+\newcommand{\mg}{m$_g$}
+\newcommand{\mh}{m$_h$}
+\newcommand{\mi}{m$_i$}
+\newcommand{\opamp}{Op-Amp}
+\newcommand{\ode}{ODE}
+\newcommand{\omeganaught}{$\omega_\circ$}
+\newcommand{\proportional}{\propto}
+\newcommand{\question}{\textbf {Question}: }
+\newcommand{\softness}{\sigma}
+%\newcommand{\si}{Si(111)-(7$\times$7)}
+\newcommand{\shm}{SHM}
+\newcommand{\sevenbyseven}{Si(111)-(7$\times$7)}
+\newcommand{\oneby}{1$\times$1}
+\newcommand{\twoby}{2$\times$2}
+\newcommand{\threeby}{3$\times$3}
+\newcommand{\fourby}{4$\times$4}
+\newcommand{\fiveby}{5$\times$5}
+\newcommand{\sixby}{6$\times$6}
+\newcommand{\sevenby}{7$\times$7}
+\newcommand{\eightby}{8$\times$8}
+\newcommand{\nineby}{9$\times$9}
+\newcommand{\theanswer}{\emph {Answer}:}
+\newcommand{\typewriter}[1]{\texttt{ #1}{}}
+\newcommand{\under}{\underline}
+\newcommand{\wavefunction}{WF}
+
+%-----------------------------------------------------------------------------------------------
+%  FRACTIONS
+%-----------------------------------------------------------------------------------------------
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\onehalf}{\frac{1}{2}}
+\newcommand{\threehalves}{\frac{3}{2}}
+\newcommand{\third}{\frac{1}{3}}
+\newcommand{\onethird}{\frac{1}{3}}
+\newcommand{\twothirds}{\frac{2}{3}}
+\newcommand{\quarter}{\frac{1}{4}}
+\newcommand{\onequarter}{\frac{1}{4}}
+\newcommand{\onefifth}{\frac{1}{5}}
+\newcommand{\onesixth}{\frac{1}{6}}
+\newcommand{\oneseventh}{\frac{1}{7}}
+\newcommand{\oneeigth}{\frac{1}{8}}
+\newcommand{\onenineth}{\frac{1}{9}}
+\newcommand{\onetenth}{\frac{1}{10}}
+
+
+%-----------------------------------------------------------------------------------------------
+%  EASY TO REMEMBER SPACES
+%-----------------------------------------------------------------------------------------------
+\newcommand{\onespace}{\vspace{1em}}
+\newcommand{\twospace}{\vspace{2em}}
+\newcommand{\threespace}{\vspace{3em}}
+\newcommand{\fourspace}{\vspace{4em}}
+\newcommand{\fivespace}{\vspace{5em}}
+\newcommand{\sixspace}{\vspace{6em}}
+\newcommand{\sevenspace}{\vspace{7em}}
+\newcommand{\eightspace}{\vspace{8em}}
+\newcommand{\ninespace}{\vspace{9em}}
+\newcommand{\tenspace}{\vspace{10em}}
+\newcommand{\squeeze}{\vfill}
+
+
+%-----------------------------------------------------------------------------------------------
+%  BOLD LETTERS
+%-----------------------------------------------------------------------------------------------
+\newcommand{\bfa}{\textbf{a}}
+\newcommand{\bfb}{\textbf{b}}
+\newcommand{\bfc}{\textbf{c}}
+\newcommand{\bfd}{\textbf{d}}
+\newcommand{\bfe}{\textbf{e}}
+\newcommand{\bff}{\textbf{f}}
+\newcommand{\bfg}{\textbf{g}}
+\newcommand{\bfh}{\textbf{h}}
+\newcommand{\bfi}{\textbf{i}}
+\newcommand{\bfj}{\textbf{j}}
+\newcommand{\bfk}{\textbf{k}}
+\newcommand{\bfl}{\textbf{l}}
+\newcommand{\bfm}{\textbf{m}}
+\newcommand{\bfn}{\textbf{n}}
+\newcommand{\bfo}{\textbf{o}}
+\newcommand{\bfp}{\textbf{p}}
+\newcommand{\bfq}{\textbf{q}}
+\newcommand{\bfr}{\textbf{r}}
+\newcommand{\bfs}{\textbf{s}}
+\newcommand{\bft}{\textbf{t}}
+\newcommand{\bfu}{\textbf{u}}
+\newcommand{\bfv}{\textbf{v}}
+\newcommand{\bfx}{\textbf{x}}
+\newcommand{\bfy}{\textbf{y}}
+\newcommand{\bfz}{\textbf{z}}
+\newcommand{\bfA}{\textbf{A}}
+\newcommand{\bfB}{\textbf{B}}
+\newcommand{\bfC}{\textbf{C}}
+\newcommand{\bfD}{\textbf{D}}
+\newcommand{\bfE}{\textbf{E}}
+\newcommand{\bfF}{\textbf{F}}
+\newcommand{\bfG}{\textbf{G}}
+\newcommand{\bfH}{\textbf{H}}
+\newcommand{\bfI}{\textbf{I}}
+\newcommand{\bfJ}{\textbf{J}}
+\newcommand{\bfK}{\textbf{K}}
+\newcommand{\bfL}{\textbf{L}}
+\newcommand{\bfM}{\textbf{M}}
+\newcommand{\bfN}{\textbf{N}}
+\newcommand{\bfO}{\textbf{O}}
+\newcommand{\bfP}{\textbf{P}}
+\newcommand{\bfQ}{\textbf{Q}}
+\newcommand{\bfR}{\textbf{R}}
+\newcommand{\bfS}{\textbf{S}}
+\newcommand{\bfT}{\textbf{T}}
+\newcommand{\bfU}{\textbf{U}}
+\newcommand{\bfV}{\textbf{V}}
+\newcommand{\bfW}{\textbf{W}}
+\newcommand{\bfX}{\textbf{X}}
+\newcommand{\bfY}{\textbf{Y}}
+\newcommand{\bfZ}{\textbf{Z}}
+
+
+
+\newcommand{\answers}[1]{{\vfill 
+\begin{flushright}
+{\it Answers:}\,#1
+\end{flushright}
+\medskip}} 
+
+\newcommand{\flushitright}[1]{
+\begin{flushright}
+#1
+\end{flushright}} 
+
+%-----------------------------------------------------------------------------------------------
+%  COUNTERS SLIDES
+%-----------------------------------------------------------------------------------------------
+\newcounter{applicationcounter}
+\newcommand{\application}[1]{{\bf Application \addtocounter{applicationcounter}{1}\theapplicationcounter. }{#1}}
+\newcounter{breakoutexamplecounter}
+\newcommand{\breakout}[1]{{\bf Breakout \addtocounter{breakoutexamplecounter}{1}\thebreakoutexamplecounter. }{#1}}
+\newcounter{conceptcounter}
+\newcommand{\concept}[1]{{\bf Concept \addtocounter{conceptcounter}{1}\theconceptcounter. }{#1}}
+\newcounter{foundationcounter}
+\newcommand{\foundation}[1]{{\bf Foundation\addtocounter{foundationcounter}{1}\thefoundationcounter. }{#1}}
+\newcounter{problemcounter}
+\newcommand{\problem}[1]{{\bf Problem \addtocounter{problemcounter}{1}\theproblemcounter. }{#1}}
+\newcounter{deconstructcounter}
+\newcommand{\deconstruct}[1]{{\bf Deconstruct \addtocounter{deconstructcounter}{1}\thedeconstructcounter. }{#1}}
+
+%-----------------------------------------------------------------------------------------------
+%  COUNTERS OLDER
+%-----------------------------------------------------------------------------------------------
+\newcounter{examplecounter}
+\newcommand{\myexample}[1]{{\bf Example \addtocounter{examplecounter}{1}\theexamplecounter. }{#1}}
+\newcounter{interactivecounter}
+\newcommand{\interactive}[1]{{\bf Interactive Ex. \addtocounter{interactivecounter}{1}\theinteractivecounter. }{#1}}
+\newcounter{conceptualcounter}
+\newcommand{\conceptual}[1]{{\bf Conceptual Qu. \addtocounter{conceptualcounter}{1}\theconceptualcounter. }{#1}}
+
+
