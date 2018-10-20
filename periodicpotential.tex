@@ -184,5 +184,39 @@ c(\boldsymbol{R})
 = e^{i \boldsymbol{k} \cdot \boldsymbol{R}}
 \end{equation}
 
+We can thus choose the eigenstates $\psi$ of $H$ so that for every Bravais lattice vector $\boldsymbol{R}$, we can obtain Bloch's theorem:
+\begin{equation} \label{eq:bloch_proof_qm}
+T_\boldsymbol{R} \psi
+= \psi(\boldsymbol{r} + \boldsymbol{R}) \psi
+= e^{i \boldsymbol{k} \cdot \boldsymbol{R}}
+\psi(\boldsymbol{r})
+\end{equation}
+\todo{I think we can add some things from the PDF I sent. We should find out what sources the PDF used and include that}
+
+\section{The Born-Von Karman (Periodic) Boundary Condition}
+To demonstrate that the wave vector $\boldsymbol{k}$ must be real, we must impose the appropriate boundary conditions. The Born-Von Karman boundary condition was originally presented earlier as
+\begin{eqnarray} \label{eq:bvk_ch2}
+\psi(x,y,z+L) &=& \psi(x,y,z), \\
+\psi(x,y+L,z) &=& \psi(x,y,z), \\
+\psi(x+L,y,z) &=& \psi(x,y,z)
+\end{eqnarray}
+
+
+but these boundary conditions apply to a cubic Bravais lattice with side L that is an integral multiple of the lattice constant, $a$. A general form of eq. (\ref{eq:bvk_ch2}) is
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
