@@ -1,0 +1,146 @@
+%----------------------------------------------------------------------------------------
+%	ELECTRON LEVELS IN A PERIODIC POTENTIAL
+%----------------------------------------------------------------------------------------
+\chapter{Electron Levels in a Periodic Potential}
+
+\listoftodos
+
+\section{Quote}
+
+\todo{We should somehow rename this section}
+
+\todo{I think we should organize it by learning objectives, introduction, main text, and summary, as the prof has outlined in the template.}
+
+\todo{I think that the more sources we have, the better it looks.}
+
+\begin{quotation}
+``When I started to think about it, I felt that the main problem was to explain how the electrons could sneak by all the ions in a metal so as to avoid a mean free path of the order of atomic distances. Such a distance was much too short to explain the observed resistances, which even demanded that the mean free path become longer and longer with decreasing temperature. But Heitler and London had already shown how electrons could jump between two atoms in a molecule to form a covalent bond, and the main difference between a molecule and a crystal was only that there were many more atoms in a periodic arrangement. To make my life easy, I began by considering wave functions in a one-dimensional periodic potential. By straight Fourier analysis I found to my delight the the wave differed from a a plane wave of free electron only by a periodic modulation.
+This was so simple that I didn’t think it could be much of a discovery, but when I showed it to Heisenberg he said right away, “That’s it.” Well, that wasn’t quite it yet, and my calculations were only completed in the summer when I wrote my thesis on 'The Quantum Mechanics of Electrons in Crystal Lattices.''
+\end{quotation}
+- Felix Bloch
+
+
+These waves are now referred to as "Bloch Waves" or "Bloch States", and they are a fundamental building bloch of condensed matter physics. This was already known in mathematics as Floquet's Theorem, but Bloch discovered its immense implications for quantum mechanics.
+Biographical Memoirs, Volume 64
+
+\section{Introduction}
+Recall the free electron and independent electron approximations from the assumptions of the Sommerfeld Model:
+
+\begin{enumerate}
+	\item \textbf{Free electron approximation.} The positive ions are there only to maintain charge neutrality. The interaction between ions and valence electrons is neglected except in boundary conditions.
+	\item \textbf{Independent electron approximation.} The interactions between electrons are neglected.
+\end{enumerate}
+
+
+Although the free electron approximation provides insight into properties of metals, such as heat capacity, thermal conductivity, and electrical conductivity, it does not account for the differences between metals, semiconductors, and insulators, and it cannot account for positive values of the Hall coefficient. In addition, conduction electrons in the metal do not correctly correspond to the number of valence electrons in free atoms. The purpose of this chapter is to set the stage for understanding band structure.
+
+\section{Periodic Potential}
+
+\todo{Find something similar to figure 8.1 and include it. See latex.tex for how to include the figure}
+
+In a perfect crystal, the electron potential looks the same at each point on the crystal lattice. This can be expressed mathematically as:
+\begin{equation} \label{eq:U_period}
+U(\boldsymbol{r} + \boldsymbol{R}) = U(\boldsymbol{r})
+\end{equation}
+where $\boldsymbol{R}$ is the Bravais lattice vector. The scale of periodicity of the potential, $U$ ($\sim$\num{d-8} cm), is the size of a typical de Broglie wavelength of an electron in the Sommerfeld free electron model, so quantum mechanics can describe the wavefunction with this same periodicity. 
+
+The electronic properties of a crystal can be examined with the Schrödinger equation while maintaining the \textit{independent electron approximation}:
+\begin{equation} \label{eq:schrod}
+H\psi=\left(-\frac{\hbar^2}{2m}\boldsymbol{\nabla}^2 + U(\boldsymbol{r})\right)\psi = \varepsilon\psi
+\end{equation}
+
+These electrons are known as \textit{Bloch electrons}, and they reduce to ``free electrons'' when the periodic potential, $U(\boldsymbol{r})$ is equal to zero.
+
+Bloch proved that the solutions to the Schrödinger equation for a periodic potential must be of the form:
+
+\begin{equation} \label{eq:bloch_theorem}
+\psi_{n\boldsymbol{k}}(\boldsymbol{r}) 
+= e^{i\boldsymbol{k} \cdot \boldsymbol{r}}
+u_{n\boldsymbol{k}}(r)
+\end{equation}
+
+where $u_{n\boldsymbol{k}}(\boldsymbol{r})$ has the period of the crystal lattice with $u_{n\boldsymbol{k}}(\boldsymbol{r}) = u_{n\boldsymbol{k}}(\boldsymbol{r} + \boldsymbol{T})$ \todo{We should explain where the n comes from.}
+Here, $\boldsymbol{T}$ is a translation vector of the lattice. This result (eq. \ref{eq:bloch_theorem}), expresses the Bloch theorem:
+\begin{quotation}
+The eigenstates of the wave equation can be chosen so that, for every $\boldsymbol{R}$ in the Bravais Lattice, each $\psi$ has an associated wave vector, $\boldsymbol{k}$, such that:
+\end{quotation}
+
+\begin{equation} \label{eq:bloch_theorem_restate}
+\psi(\boldsymbol{r} + \boldsymbol{R})
+= e^{i\boldsymbol{k} \cdot \boldsymbol{R}}
+\psi(\boldsymbol{r})
+\end{equation}
+
+
+Ashcroft and Mermin provide two proofs of Bloch's Theorem, which we will reproduce below.
+
+\subsection{Proof 1 of Bloch's Theorem from Quantum Mechanics}
+This proof is valid even when $\psi_{\boldsymbol{k}}$ is degenerate, i.e. when there is are other wavefunctions with the same energy and wavevector as $\psi_{\boldsymbol{k}}$.
+
+For each Bravais lattice vector $\boldsymbol{R}$, let $T_{\boldsymbol{R}}$ be the translation operator, which, when operating on any function $f(\boldsymbol{r})$, shifts the argument by $\boldsymbol{R}$:
+
+\begin{equation} \label{eq:translation}
+T_{\boldsymbol{R}} f(\boldsymbol{r})
+= f(\boldsymbol{r} + \boldsymbol{R})
+\end{equation}
+
+Due to the periodicicity of the lattice, we can show that the translation operator commutes with the Hamiltonian:
+
+\begin{equation} \label{eq:trans_commute1}
+T_{\boldsymbol{R}} H \psi
+= H \psi(\boldsymbol{r} + \boldsymbol{R})
+= H(\boldsymbol{r}) \psi(\boldsymbol{r} + \boldsymbol{R})
+= HT_{R} \psi
+\end{equation}
+
+Note that the application of two successive translations does not depend on the order in which they are applied, since for any $\psi(\boldsymbol{r})$
+
+\begin{equation} \label{eq:trans_commute2}
+T_{\boldsymbol{R}} T_{\boldsymbol{R'}} \psi(\boldsymbol{r})
+= T_{\boldsymbol{R'}} T_{\boldsymbol{R}} \psi(\boldsymbol{r})
+= \psi(\boldsymbol{r} + \boldsymbol{R} + \boldsymbol{R'})
+\end{equation}
+
+Therefore
+\begin{equation} \label{eq:trans_addition}
+T_{\boldsymbol{R}} T_{\boldsymbol{R'}}
+= T_{\boldsymbol{R'}} T_{\boldsymbol{R}}
+= T_{\boldsymbol{R + R'}}
+\end{equation}
+
+Because eq. (\ref{eq:trans_commute1}) holds identically for any function $\psi$, $T_{\boldsymbol{R}}$ and $H$ commute:
+
+\begin{equation} \label{eq:trans_commute_relation}
+T_{\boldsymbol{R}} H = H T_{\boldsymbol{R}}
+\end{equation}
+
+A theorem of quantum mechanics \todo{maybe we should say which theorem. see AM subnote on page 134.} allows us to choose eigenstates of $H$ that are simultaneous eigenstates of all the $T_{\boldsymbol{R}}$:
+
+\begin{eqnarray} 
+H\psi &=& \varepsilon\psi \nonumber \\
+T_{R} \psi &=& c(\boldsymbol{R}) \psi \label{eq:eigenstates}
+\end{eqnarray}
+
+The eigenvalues $c(\boldsymbol{R})$ of the translation operators are related in the following way:
+\begin{equation} \label{eq:c_relation}
+c(\boldsymbol{R} + \boldsymbol{R'}) 
+= c(\boldsymbol{R}) c(\boldsymbol{R}')
+\end{equation}
+
+This can be seen from eq. (\ref{eq:trans_addition}):
+\begin{equation} \label{eq:derive_crelation1}
+T_{\boldsymbol{R}'} T_{\boldsymbol{R}} \psi
+= c(\boldsymbol{R}) T_{\boldsymbol{R}} \psi
+= c(\boldsymbol{R}) c(\boldsymbol{R}')
+\end{equation}
+
+Eq. (\ref{eq:trans_addition}) can \emph{also} be used to formulate the eigenvalues as such:
+\begin{equation}
+T_{\boldsymbol{R}'} T_{\boldsymbol{R}} \psi
+= T_{\boldsymbol{R} + \boldsymbol{R'}} \psi
+= c(\boldsymbol{R} + \boldsymbol{R'}) 
+\end{equation}
+
+In order to satisfy Bloch's theorem, in the form of eq. ({eq:bloch_theorem_restate}), we can come up with an expression for the exponential, $e^{i\boldsymbol{k} \boldsymbol{R}$ in terms of the eigenvalue through the following derivation:
+
+

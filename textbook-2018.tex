@@ -1,0 +1,174 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt,oneside,lettersize,oldfontcommands]{memoir}
+\title{Condensed Matter Physics}
+\author{The Class of 2019}
+\date{\today}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PAPER, MARGIN AND HEADER/FOOTER SIZES
+%----------------------------------------------------------------------------------------										
+\input{macros-2018} 											% macros
+\input{packages-2018} 										% packages
+%\setlength{\parindent}{0in}  									% no indent
+\setsecnumdepth{subsection} 									% this will add numbers to subsections
+
+%----------------------------------------------------------------------------------------
+%	PAPER, MARGIN AND HEADER/FOOTER SIZES
+%----------------------------------------------------------------------------------------
+\settrimmedsize{11in}{210mm}{*}
+\setlength{\trimtop}{0pt}
+\setlength{\trimedge}{\stockwidth}
+\addtolength{\trimedge}{-\paperwidth}
+\settypeblocksize{7.75in}{33pc}{*}
+\setulmargins{4cm}{*}{*}
+\setlrmargins{0.75in}{*}{*}
+\setmarginnotes{10pt}{125pt}{\onelineskip}
+\setheadfoot{\onelineskip}{2\onelineskip}
+\setheaderspaces{*}{2\onelineskip}{*}
+\checkandfixthelayout
+
+% Tufte-style fonts
+\usepackage[osf,sc]{mathpazo}						% Palatino for main text and math
+% Helvetica for sans serif
+\usepackage[scaled=90]{helvet}		  			% (scaled to match size of Palatino)
+\usepackage[scaled=85]{beramono}	  				% Bera Mono for monospaced	
+
+%--------------------------------------------------------------------------------------------------------------------------- 
+% Heffalump
+\usepackage[table]{xcolor}
+\usepackage{todonotes}
+\usepackage{menukeys}
+\usepackage{todonotes}  
+\newcommand{\todoredefined}[2][]
+{\todo[color=red, #1]{#2}}
+
+\usepackage{amsmath}  % chapter equations
+\usepackage{siunitx}  % units and stuff
+
+%---------------------------------------------------------------------------------------------------------------------------
+
+
+
+%---------------------------------------------------------------------------------------------------------------------------
+%	TITLE PAGE MACRO
+%---------------------------------------------------------------------------------------------------------------------------
+\makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}
+  \begin{center}\leavevmode
+       \normalfont
+       {\HUGE \bf \@title\par}
+       \onespace %\hrule \onespace
+       \placefigure{figures/title/04-600px-NaCl_40x40x2_slab.png}{1.0}
+       \onespace   
+       %\hrule
+       \flushright{\large \bf \@author\par}
+       \onespace
+       {\large \@date\par}
+       \onespace
+   \end{center}
+   \vfill
+  }
+\makeatother
+
+
+
+%---------------------------------------------------------------------------------------------------------------------------
+%	START OF DOCUMENT
+%---------------------------------------------------------------------------------------------------------------------------
+
+\begin{document}
+\maketitle
+\frontmatter
+\sloppy
+\tableofcontents % Print the table of contents
+%\cleardoublepage
+\mainmatter
+
+%----------------------------------------------------------------------------------------
+%	THE CHAPTERS
+%----------------------------------------------------------------------------------------
+\include{preface}
+\include{sommerfeld}
+\include{crystallattices}
+\include{reciprocallattice}
+\include{xraydiffraction}
+\include{classicalharmoniccrystal}
+\include{quantumharmoniccrystal}
+\include{periodicpotential}
+\include{weakperiodicpotential}
+\include{smed}
+\include{homogeneoussemiconductors}
+\include{equationsheet}
+\include{latex}
+\include{template}
+
+
+\backmatter
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\bibliography{references} % This is the file with all the references - actually 'references.bib'
+%\bibliographystyle{plainnat} % Use the plainnat style of referencing
+\bibliographystyle{unsrt} % This defines the style of the bibliography
+%\bibliographystyle{abbrv} % This defines the style of the bibliography
+%\printindex % Print the index at the very end of the document
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
