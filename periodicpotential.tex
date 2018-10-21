@@ -5,17 +5,24 @@
 
 \listoftodos
 
-\section{Quote}
+\section{Preface}
 
 \todo{We should somehow rename this section}
 
 \todo{I think we should organize it by learning objectives, introduction, main text, and summary, as the prof has outlined in the template.}
 
+The writers' goals are:
+\begin{enumerate}
+	\item To give a clearer picture of the direction of the proof before finding the result
+	\item To explain things that were not fully explained
+	\item To add extra insight and applications to A\&M
+\end{enumerate}
+
 \todo{I think that the more sources we have, the better it looks.}
 
 \begin{quotation}
-``When I started to think about it, I felt that the main problem was to explain how the electrons could sneak by all the ions in a metal so as to avoid a mean free path of the order of atomic distances. Such a distance was much too short to explain the observed resistances, which even demanded that the mean free path become longer and longer with decreasing temperature. But Heitler and London had already shown how electrons could jump between two atoms in a molecule to form a covalent bond, and the main difference between a molecule and a crystal was only that there were many more atoms in a periodic arrangement. To make my life easy, I began by considering wave functions in a one-dimensional periodic potential. By straight Fourier analysis I found to my delight the the wave differed from a a plane wave of free electron only by a periodic modulation.
-This was so simple that I didn’t think it could be much of a discovery, but when I showed it to Heisenberg he said right away, “That’s it.” Well, that wasn’t quite it yet, and my calculations were only completed in the summer when I wrote my thesis on 'The Quantum Mechanics of Electrons in Crystal Lattices.''
+	``When I started to think about it, I felt that the main problem was to explain how the electrons could sneak by all the ions in a metal so as to avoid a mean free path of the order of atomic distances. Such a distance was much too short to explain the observed resistances, which even demanded that the mean free path become longer and longer with decreasing temperature. But Heitler and London had already shown how electrons could jump between two atoms in a molecule to form a covalent bond, and the main difference between a molecule and a crystal was only that there were many more atoms in a periodic arrangement. To make my life easy, I began by considering wave functions in a one-dimensional periodic potential. By straight Fourier analysis I found to my delight the the wave differed from a a plane wave of free electron only by a periodic modulation.
+	This was so simple that I didn’t think it could be much of a discovery, but when I showed it to Heisenberg he said right away, “That’s it.” Well, that wasn’t quite it yet, and my calculations were only completed in the summer when I wrote my thesis on 'The Quantum Mechanics of Electrons in Crystal Lattices.''
 \end{quotation}
 - Felix Bloch
 
@@ -40,13 +47,13 @@ Although the free electron approximation provides insight into properties of met
 
 In a perfect crystal, the electron potential looks the same at each point on the crystal lattice. This can be expressed mathematically as:
 \begin{equation} \label{eq:U_period}
-U(\boldsymbol{r} + \boldsymbol{R}) = U(\boldsymbol{r})
+	U(\boldsymbol{r} + \boldsymbol{R}) = U(\boldsymbol{r})
 \end{equation}
 where $\boldsymbol{R}$ is the Bravais lattice vector. The scale of periodicity of the potential, $U$ ($\sim$\num{d-8} cm), is the size of a typical de Broglie wavelength of an electron in the Sommerfeld free electron model, so quantum mechanics can describe the wavefunction with this same periodicity. 
 
 The electronic properties of a crystal can be examined with the Schrödinger equation while maintaining the \textit{independent electron approximation}:
 \begin{equation} \label{eq:schrod}
-H\psi=\left(-\frac{\hbar^2}{2m}\boldsymbol{\nabla}^2 + U(\boldsymbol{r})\right)\psi = \varepsilon\psi
+	H\psi=\left(-\frac{\hbar^2}{2m}\boldsymbol{\nabla}^2 + U(\boldsymbol{r})\right)\psi = \varepsilon\psi
 \end{equation}
 
 These electrons are known as \textit{Bloch electrons}, and they reduce to ``free electrons'' when the periodic potential, $U(\boldsymbol{r})$ is equal to zero.
@@ -54,21 +61,21 @@ These electrons are known as \textit{Bloch electrons}, and they reduce to ``free
 Bloch proved that the solutions to the Schrödinger equation for a periodic potential must be of the form:
 
 \begin{equation} \label{eq:bloch_theorem}
-\psi_{n\boldsymbol{k}}(\boldsymbol{r}) 
-= e^{i\boldsymbol{k} \cdot \boldsymbol{r}}
-u_{n\boldsymbol{k}}(r)
+	\psi_{n\boldsymbol{k}}(\boldsymbol{r}) 
+	= e^{i\boldsymbol{k} \cdot \boldsymbol{r}}
+	u_{n\boldsymbol{k}}(r)
 \end{equation}
 
 where $u_{n\boldsymbol{k}}(\boldsymbol{r})$ has the period of the crystal lattice with $u_{n\boldsymbol{k}}(\boldsymbol{r}) = u_{n\boldsymbol{k}}(\boldsymbol{r} + \boldsymbol{T})$ \todo{We should explain where the n comes from.}
 Here, $\boldsymbol{T}$ is a translation vector of the lattice. This result (eq. \ref{eq:bloch_theorem}), expresses the Bloch theorem:
 \begin{quotation}
-The eigenstates of the wave equation can be chosen so that, for every $\boldsymbol{R}$ in the Bravais Lattice, each $\psi$ has an associated wave vector, $\boldsymbol{k}$, such that:
+	The eigenstates of the wave equation can be chosen so that, for every $\boldsymbol{R}$ in the Bravais Lattice, each $\psi$ has an associated wave vector, $\boldsymbol{k}$, such that:
 \end{quotation}
 
 \begin{equation} \label{eq:bloch_theorem_restate}
-\psi(\boldsymbol{r} + \boldsymbol{R})
-= e^{i\boldsymbol{k} \cdot \boldsymbol{R}}
-\psi(\boldsymbol{r})
+	\psi(\boldsymbol{r} + \boldsymbol{R})
+	= e^{i\boldsymbol{k} \cdot \boldsymbol{R}}
+	\psi(\boldsymbol{r})
 \end{equation}
 
 
@@ -80,132 +87,196 @@ This proof is valid even when $\psi_{\boldsymbol{k}}$ is degenerate, i.e. when t
 For each Bravais lattice vector $\boldsymbol{R}$, let $T_{\boldsymbol{R}}$ be the translation operator, which, when operating on any function $f(\boldsymbol{r})$, shifts the argument by $\boldsymbol{R}$:
 
 \begin{equation} \label{eq:translation}
-T_{\boldsymbol{R}} f(\boldsymbol{r})
-= f(\boldsymbol{r} + \boldsymbol{R})
+	T_{\boldsymbol{R}} f(\boldsymbol{r})
+	= f(\boldsymbol{r} + \boldsymbol{R})
 \end{equation}
 
 Due to the periodicicity of the lattice, we can show that the translation operator commutes with the Hamiltonian:
 
 \begin{equation} \label{eq:trans_commute1}
-T_{\boldsymbol{R}} H \psi
-= H \psi(\boldsymbol{r} + \boldsymbol{R})
-= H(\boldsymbol{r}) \psi(\boldsymbol{r} + \boldsymbol{R})
-= HT_{R} \psi
+	T_{\boldsymbol{R}} H \psi
+	= H \psi(\boldsymbol{r} + \boldsymbol{R})
+	= H(\boldsymbol{r}) \psi(\boldsymbol{r} + \boldsymbol{R})
+	= HT_{R} \psi
 \end{equation}
 
 Note that the application of two successive translations does not depend on the order in which they are applied, since for any $\psi(\boldsymbol{r})$
 
 \begin{equation} \label{eq:trans_commute2}
-T_{\boldsymbol{R}} T_{\boldsymbol{R'}} \psi(\boldsymbol{r})
-= T_{\boldsymbol{R'}} T_{\boldsymbol{R}} \psi(\boldsymbol{r})
-= \psi(\boldsymbol{r} + \boldsymbol{R} + \boldsymbol{R'})
+	T_{\boldsymbol{R}} T_{\boldsymbol{R'}} \psi(\boldsymbol{r})
+	= T_{\boldsymbol{R'}} T_{\boldsymbol{R}} \psi(\boldsymbol{r})
+	= \psi(\boldsymbol{r} + \boldsymbol{R} + \boldsymbol{R'})
 \end{equation}
 
 Therefore
 \begin{equation} \label{eq:trans_addition}
-T_{\boldsymbol{R}} T_{\boldsymbol{R'}}
-= T_{\boldsymbol{R'}} T_{\boldsymbol{R}}
-= T_{\boldsymbol{R + R'}}
+	T_{\boldsymbol{R}} T_{\boldsymbol{R'}}
+	= T_{\boldsymbol{R'}} T_{\boldsymbol{R}}
+	= T_{\boldsymbol{R + R'}}
 \end{equation}
 
 Because eq. (\ref{eq:trans_commute1}) holds identically for any function $\psi$, $T_{\boldsymbol{R}}$ and $H$ commute:
 
 \begin{equation} \label{eq:trans_commute_relation}
-T_{\boldsymbol{R}} H = H T_{\boldsymbol{R}}
+	T_{\boldsymbol{R}} H = H T_{\boldsymbol{R}}
 \end{equation}
 
 A theorem of quantum mechanics \todo{maybe we should say which theorem. see AM subnote on page 134.} allows us to choose eigenstates of $H$ that are simultaneous eigenstates of all the $T_{\boldsymbol{R}}$:
 
 \begin{eqnarray} 
-H\psi &=& \varepsilon\psi \nonumber \\
-T_{R} \psi &=& c(\boldsymbol{R}) \psi \label{eq:eigenstates}
+	H\psi &=& \varepsilon\psi \nonumber \\
+	T_{R} \psi &=& c(\boldsymbol{R}) \psi \label{eq:eigenstates}
 \end{eqnarray}
 
 The eigenvalues $c(\boldsymbol{R})$ of the translation operators are related in the following way:
 \begin{equation} \label{eq:c_relation}
-c(\boldsymbol{R} + \boldsymbol{R'}) 
-= c(\boldsymbol{R}) c(\boldsymbol{R}')
+	c(\boldsymbol{R} + \boldsymbol{R'}) 
+	= c(\boldsymbol{R}) c(\boldsymbol{R}')
 \end{equation}
 
 This can be seen from eq. (\ref{eq:trans_addition}):
 \begin{equation} \label{eq:derive_crelation1}
-T_{\boldsymbol{R}'} T_{\boldsymbol{R}} \psi
-= c(\boldsymbol{R}) T_{\boldsymbol{R}} \psi
-= c(\boldsymbol{R}) c(\boldsymbol{R}')
+	T_{\boldsymbol{R}'} T_{\boldsymbol{R}} \psi
+	= c(\boldsymbol{R}) T_{\boldsymbol{R}} \psi
+	= c(\boldsymbol{R}) c(\boldsymbol{R}')
 \end{equation}
 
 Eq. (\ref{eq:trans_addition}) can \emph{also} be used to formulate the eigenvalues as such:
 \begin{equation}
-T_{\boldsymbol{R}'} T_{\boldsymbol{R}} \psi
-= T_{\boldsymbol{R} + \boldsymbol{R'}} \psi
-= c(\boldsymbol{R} + \boldsymbol{R'}) 
+	T_{\boldsymbol{R}'} T_{\boldsymbol{R}} \psi
+	= T_{\boldsymbol{R} + \boldsymbol{R'}} \psi
+	= c(\boldsymbol{R} + \boldsymbol{R'}) 
 \end{equation}
 
 In order to satisfy Bloch's theorem, in the form of eq. (\ref{eq:bloch_theorem_restate}), we can come up with an expression for the exponential, $e^{i\boldsymbol{k} \boldsymbol{R}}$ in terms of the eigenvalue, $c(\boldsymbol{R})$ through the following derivation.
 
 We first write an expression for $\boldsymbol{R}$ as the Bravais lattice vector given by
 \begin{equation} \label{eq:r_express}
-\boldsymbol{R} = n_{1} \boldsymbol{a}_{1}
-+ n_{2} \boldsymbol{a}_{2}
-+ n_{3} \boldsymbol{a}_{3}
+	\boldsymbol{R} = n_{1} \boldsymbol{a}_{1}
+	+ n_{2} \boldsymbol{a}_{2}
+	+ n_{3} \boldsymbol{a}_{3}
 \end{equation}
 
 where $\boldsymbol{a_{i}}$ are the three primitive vectors of the Bravais lattice, which can be captured by $\boldsymbol{c}$: \todo{Can someone please explain how we can express $c$ this way because I do not get it! Thanks.}
 
 \begin{equation} \label{eq:c_exp}
-c(\boldsymbol{a}_{i}) = e^{2 \pi i x_{i}}
+		c(\boldsymbol{a}_{i}) = e^{2 \pi i x_{i}}
 \end{equation}
 
 by a suitable choice \todo{yeah I don't know what ``suitable'' means. Please explain} of $x_i$. From successive applications of \ref{eq:c_relation} that
 
 \begin{equation} \label{eq:c_mult}
-c(\boldsymbol{R})
-= c(\boldsymbol{a}_1)^{n_1}
-c(\boldsymbol{a}_2)^{n_2}
-c(\boldsymbol{a}_3)^{n_3}
+	c(\boldsymbol{R})
+	= c(\boldsymbol{a}_1)^{n_1}
+	c(\boldsymbol{a}_2)^{n_2}
+	c(\boldsymbol{a}_3)^{n_3}
 \end{equation}
 
 and since
 \begin{equation} \label{eq:k_with_bi}
-\boldsymbol{k} = x_1 \boldsymbol{b}_1
-+ x_2\boldsymbol{b}_2
-+ x_3 \boldsymbol{b}_3
+	\boldsymbol{k} = x_1 \boldsymbol{b}_1
+	+ x_2\boldsymbol{b}_2
+	+ x_3 \boldsymbol{b}_3
 \end{equation}
 
 where $b_i$ are the reciprocal lattice vectors satisfying
 \begin{equation} \label{eq:recip_b}
-\boldsymbol{b_i \cdot a_j}
-= 2 \pi \delta_{ij}
+	\boldsymbol{b_i \cdot a_j}
+	= 2 \pi \delta_{ij}
 \end{equation}
 
 this means that
 \begin{equation} \label{eq:c(R)}
-c(\boldsymbol{R}) 
-= e^{i \boldsymbol{k} \cdot \boldsymbol{R}}
+	c(\boldsymbol{R}) 
+	= e^{i \boldsymbol{k} \cdot \boldsymbol{R}}
 \end{equation}
 
 We can thus choose the eigenstates $\psi$ of $H$ so that for every Bravais lattice vector $\boldsymbol{R}$, we can obtain Bloch's theorem:
 \begin{equation} \label{eq:bloch_proof_qm}
-T_\boldsymbol{R} \psi
-= \psi(\boldsymbol{r} + \boldsymbol{R}) \psi
-= e^{i \boldsymbol{k} \cdot \boldsymbol{R}}
+	T_{\boldsymbol{R}} \psi
+	= \psi(\boldsymbol{r} + \boldsymbol{R}) \psi
+	= e^{i \boldsymbol{k} \cdot \boldsymbol{R}}
 \psi(\boldsymbol{r})
 \end{equation}
 \todo{I think we can add some things from the PDF I sent. We should find out what sources the PDF used and include that}
 
-\section{The Born-Von Karman (Periodic) Boundary Condition}
+\section{Form of the Bloch Wave Vector}
+\todo{Note here that I renamed this section from the BVK Boundary Conditions.}
 To demonstrate that the wave vector $\boldsymbol{k}$ must be real, we must impose the appropriate boundary conditions. The Born-Von Karman boundary condition was originally presented earlier as
 \begin{eqnarray} \label{eq:bvk_ch2}
-\psi(x,y,z+L) &=& \psi(x,y,z), \\
-\psi(x,y+L,z) &=& \psi(x,y,z), \\
-\psi(x+L,y,z) &=& \psi(x,y,z)
+	\psi(x,y,z+L) &=& \psi(x,y,z), \\ \nonumber
+	\psi(x,y+L,z) &=& \psi(x,y,z), \\
+	\psi(x+L,y,z) &=& \psi(x,y,z) \nonumber
 \end{eqnarray}
 
+but these boundary conditions apply to a cubic Bravais lattice with side L that is an integral multiple of the lattice constant, $a$. A general form of eq. (\ref{eq:bvk_ch2}) is 
+\begin{alignat}{2}\label{eq:bvk}
+	\psi(\boldsymbol{r} + N_i \boldsymbol{a}_i)
+	&= \psi(\boldsymbol{r}),
+	&\quad
+	i &= 1,2,3
+\end{alignat}
 
-but these boundary conditions apply to a cubic Bravais lattice with side L that is an integral multiple of the lattice constant, $a$. A general form of eq. (\ref{eq:bvk_ch2}) is
+The $\boldsymbol{a}_i$ are the primitive vectors, and the $N_i$ are all integers of order $N^{1/3}$, where $N=N_1N_2N_3$ is the total number of primitive cells in the crystal.
 
+Applying Bloch's theorem, eq. (\ref{eq:bloch_theorem_restate}) to the boundary condition, eq. (\ref{eq:bvk}), \todo{can someone please explain where the n comes from?} we obtain
 
+\begin{alignat}{2}\label{eq:bloch_applied}
+	\psi_{n\boldsymbol{k}}
+	(\boldsymbol{r} + N_i \boldsymbol{a}_i)
+	&= 
+	e^{i N_i \boldsymbol{k} \cdot \boldsymbol{a}_i}
+	\psi(\boldsymbol{r}),
+	&\quad
+	i &= 1,2,3
+\end{alignat}
 
+which requires that
+
+\begin{equation} \label{eq:requirement}
+	e^{2 \pi i N_i x_i} = 1
+\end{equation}
+
+meaning
+\begin{alignat}{2} \label{eq:xi}
+	x_i &= \frac{m_i}{N_i},
+	& \quad
+	m_i\text{ integral}
+\end{alignat}
+
+\todo{I think I need to edit this section a bit more because it is just copied- there are no additional explanations}
+
+Therefore the general form for allowed Bloch wave vectors is
+
+\begin{alignat}{3} \label{eq:wave_vector}
+	\boldsymbol{k} =
+	\sum_{i=1}^{3} \frac{m_i}{N_i},
+	&\quad 
+	&m_i\text{ integral}
+\end{alignat}
+
+It follows from eq. (\ref{eq:wave_vector}) that the volume $\Delta\boldsymbol{k}$ of $k$-space per allowed value of $\boldsymbol{k}$ is just the volume of the little parallelepiped with edges $\boldsymbol{b}_i/N_i$:
+
+\begin{equation} \label{eq:deltak}
+	\Delta{k}
+	= 
+	\frac{\boldsymbol{b_1}}{N_1}
+	\cdot
+	\left(
+	\frac{\boldsymbol{b_2}}{N_2}
+	\times
+	\frac{\boldsymbol{b_3}}{N_3}
+	\right)
+	=
+	\frac{1}{N}
+	\boldsymbol{b_1}
+	\cdot
+	\left(
+	\boldsymbol{b_2}
+	\times
+	\boldsymbol{b_3}
+	\right)
+\end{equation}
 
 
 
