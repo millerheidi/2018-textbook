@@ -15,6 +15,8 @@
 
 \todo{We need to check the notation for $K$ and $G$ since we should be consistent with the notes and not A\&M}
 
+\todo{we might want to write a summary of the main points and equations}
+
 The writers' goals are:
 \begin{enumerate}
 	\item To give a clearer picture of the direction of the proof before finding the result
@@ -32,7 +34,7 @@ The writers' goals are:
 
 
 These waves are now referred to as "Bloch Waves" or "Bloch States", and they are a fundamental building bloch of condensed matter physics. This was already known in mathematics as Floquet's Theorem, but Bloch discovered its immense implications for quantum mechanics.
-Biographical Memoirs, Volume 64
+Biographical Memoirs, Volume 64 \todo{cite properly}
 
 \section{Introduction}
 	Recall the free electron and independent electron approximations from the assumptions of the Sommerfeld Model:
@@ -51,162 +53,162 @@ Biographical Memoirs, Volume 64
 
 	In a perfect crystal, the electron potential looks the same at each point on the crystal lattice. This can be expressed mathematically as:
 	\begin{equation} \label{eq:U_period}
-		U(\boldsymbol{r} + \boldsymbol{R}) = U(\boldsymbol{r})
+		U(\mathbf{r} + \mathbf{R}) = U(\mathbf{r})
 	\end{equation}
-	where $\boldsymbol{R}$ is the Bravais lattice vector. The scale of periodicity of the potential, $U$ ($\sim$\num{d-8} cm), is the size of a typical de Broglie wavelength of an electron in the Sommerfeld free electron model, so quantum mechanics can describe the wavefunction with this same periodicity. 
+	where $\mathbf{R}$ is the Bravais lattice vector. The scale of periodicity of the potential, $U$ ($\sim$\num{d-8} cm), is the size of a typical de Broglie wavelength of an electron in the Sommerfeld free electron model, so quantum mechanics can describe the wavefunction with this same periodicity. 
 
 	The electronic properties of a crystal can be examined with the Schrödinger equation while maintaining the \textit{independent electron approximation}:
 	\begin{equation} \label{eq:schrod}
-		H\psi=\left(-\frac{\hbar^2}{2m}\boldsymbol{\nabla}^2 + U(\boldsymbol{r})\right)\psi = \varepsilon\psi
+		H\psi=\left(-\frac{\hbar^2}{2m}\mathbf{\nabla}^2 + U(\mathbf{r})\right)\psi = \varepsilon\psi
 	\end{equation}
 
-	These electrons are known as \textit{Bloch electrons}, and they reduce to ``free electrons'' when the periodic potential, $U(\boldsymbol{r})$ is equal to zero.
+	These electrons are known as \textit{Bloch electrons}, and they reduce to ``free electrons'' when the periodic potential, $U(\mathbf{r})$ is equal to zero.
 
 	Bloch proved that the solutions to the Schrödinger equation for a periodic potential must be of the form:
 
 	\begin{equation} \label{eq:bloch_theorem}
-		\psi_{n\boldsymbol{k}}(\boldsymbol{r}) 
-		= e^{i\boldsymbol{k} \cdot \boldsymbol{r}}
-		u_{n\boldsymbol{k}}(r)
+		\psi_{n\mathbf{k}}(\mathbf{r}) 
+		= e^{i\mathbf{k} \cdot \mathbf{r}}
+		u_{n\mathbf{k}}(r)
 	\end{equation}
 
-	where $u_{n\boldsymbol{k}}(\boldsymbol{r})$ has the period of the crystal lattice with $u_{n\boldsymbol{k}}(\boldsymbol{r}) = u_{n\boldsymbol{k}}(\boldsymbol{r} + \boldsymbol{T})$ \todo{We should explain where the n comes from.}
-	Here, $\boldsymbol{T}$ is a translation vector of the lattice. This result (eq. \ref{eq:bloch_theorem}), expresses the Bloch theorem:
+	where $u_{n\mathbf{k}}(\mathbf{r})$ has the period of the crystal lattice with $u_{n\mathbf{k}}(\mathbf{r}) = u_{n\mathbf{k}}(\mathbf{r} + \mathbf{T})$ \todo{We should explain where the n comes from.}
+	Here, $\mathbf{T}$ is a translation vector of the lattice. This result (eq. \ref{eq:bloch_theorem}), expresses the Bloch theorem:
 	\begin{quotation}
-		The eigenstates of the wave equation can be chosen so that, for every $\boldsymbol{R}$ in the Bravais Lattice, each $\psi$ has an associated wave vector, $\boldsymbol{k}$, such that:
+		The eigenstates of the wave equation can be chosen so that, for every $\mathbf{R}$ in the Bravais Lattice, each $\psi$ has an associated wave vector, $\mathbf{k}$, such that:
 	\end{quotation}
 
 	\begin{equation} \label{eq:bloch_theorem_restate}
-		\psi(\boldsymbol{r} + \boldsymbol{R})
-		= e^{i\boldsymbol{k} \cdot \boldsymbol{R}}
-		\psi(\boldsymbol{r})
+		\psi(\mathbf{r} + \mathbf{R})
+		= e^{i\mathbf{k} \cdot \mathbf{R}}
+		\psi(\mathbf{r})
 	\end{equation}
 
 
 	Ashcroft and Mermin provide two proofs of Bloch's Theorem, which we will reproduce below.
 
 \section{Quantum Mechanical proof of Bloch's Theorem}
-	This proof is valid even when $\psi_{\boldsymbol{k}}$ is degenerate, \todo{put this somewhere else. Also check about the other proof} i.e. when there are other wavefunctions with the same energy and wavevector as $\psi_{\boldsymbol{k}}$.
+	This proof is valid even when $\psi_{\mathbf{k}}$ is degenerate, \todo{put this somewhere else. Also check about the other proof} i.e. when there are other wavefunctions with the same energy and wavevector as $\psi_{\mathbf{k}}$.
 
-	For each Bravais lattice vector $\boldsymbol{R}$, let $T_{\boldsymbol{R}}$ be the translation operator, which, when operating on any function $f(\boldsymbol{r})$, shifts the argument by $\boldsymbol{R}$:
+	For each Bravais lattice vector $\mathbf{R}$, let $T_{\mathbf{R}}$ be the translation operator, which, when operating on any function $f(\mathbf{r})$, shifts the argument by $\mathbf{R}$:
 
 	\begin{equation} \label{eq:translation}
-		T_{\boldsymbol{R}} f(\boldsymbol{r})
-		= f(\boldsymbol{r} + \boldsymbol{R})
+		T_{\mathbf{R}} f(\mathbf{r})
+		= f(\mathbf{r} + \mathbf{R})
 	\end{equation}
 
 	Due to the periodicicity of the lattice, we can show that the translation operator commutes with the Hamiltonian:
 
 	\begin{equation} \label{eq:trans_commute1}
-		T_{\boldsymbol{R}} H \psi
-		= H \psi(\boldsymbol{r} + \boldsymbol{R})
-		= H(\boldsymbol{r}) \psi(\boldsymbol{r} + \boldsymbol{R})
+		T_{\mathbf{R}} H \psi
+		= H \psi(\mathbf{r} + \mathbf{R})
+		= H(\mathbf{r}) \psi(\mathbf{r} + \mathbf{R})
 		= HT_{R} \psi
 	\end{equation}
 
-	Note that the application of two successive translations does not depend on the order in which they are applied, since for any $\psi(\boldsymbol{r})$
+	Note that the application of two successive translations does not depend on the order in which they are applied, since for any $\psi(\mathbf{r})$
 
 	\begin{equation} \label{eq:trans_commute2}
-		T_{\boldsymbol{R}} T_{\boldsymbol{R'}} \psi(\boldsymbol{r})
-		= T_{\boldsymbol{R'}} T_{\boldsymbol{R}} \psi(\boldsymbol{r})
-		= \psi(\boldsymbol{r} + \boldsymbol{R} + \boldsymbol{R'})
+		T_{\mathbf{R}} T_{\mathbf{R'}} \psi(\mathbf{r})
+		= T_{\mathbf{R'}} T_{\mathbf{R}} \psi(\mathbf{r})
+		= \psi(\mathbf{r} + \mathbf{R} + \mathbf{R'})
 	\end{equation}
 
 	Therefore
 	\begin{equation} \label{eq:trans_addition}
-		T_{\boldsymbol{R}} T_{\boldsymbol{R'}}
-		= T_{\boldsymbol{R'}} T_{\boldsymbol{R}}
-		= T_{\boldsymbol{R + R'}}
+		T_{\mathbf{R}} T_{\mathbf{R'}}
+		= T_{\mathbf{R'}} T_{\mathbf{R}}
+		= T_{\mathbf{R + R'}}
 	\end{equation}
 
-	Because eq. (\ref{eq:trans_commute1}) holds identically for any function $\psi$, $T_{\boldsymbol{R}}$ and $H$ commute:
+	Because eq. (\ref{eq:trans_commute1}) holds identically for any function $\psi$, $T_{\mathbf{R}}$ and $H$ commute:
 
 	\begin{equation} \label{eq:trans_commute_relation}
-		T_{\boldsymbol{R}} H = H T_{\boldsymbol{R}}
+		T_{\mathbf{R}} H = H T_{\mathbf{R}}
 	\end{equation}
 
-	A theorem of quantum mechanics \todo{maybe we should say which theorem. see AM subnote on page 134.} allows us to choose eigenstates of $H$ that are simultaneous eigenstates of all the $T_{\boldsymbol{R}}$:
+	A theorem of quantum mechanics \todo{maybe we should say which theorem. see AM subnote on page 134.} allows us to choose eigenstates of $H$ that are simultaneous eigenstates of all the $T_{\mathbf{R}}$:
 
 	\begin{eqnarray} 
 		H\psi &=& \varepsilon\psi \nonumber \\
-		T_{R} \psi &=& c(\boldsymbol{R}) \psi \label{eq:eigenstates}
+		T_{R} \psi &=& c(\mathbf{R}) \psi \label{eq:eigenstates}
 	\end{eqnarray}
 
-	The eigenvalues $c(\boldsymbol{R})$ of the translation operators are related in the following way:
+	The eigenvalues $c(\mathbf{R})$ of the translation operators are related in the following way:
 	\begin{equation} \label{eq:c_relation}
-		c(\boldsymbol{R} + \boldsymbol{R'}) 
-		= c(\boldsymbol{R}) c(\boldsymbol{R}')
+		c(\mathbf{R} + \mathbf{R'}) 
+		= c(\mathbf{R}) c(\mathbf{R}')
 	\end{equation}
 
 	This can be seen from eq. (\ref{eq:trans_addition}):
 	\begin{equation} \label{eq:derive_crelation1}
-		T_{\boldsymbol{R}'} T_{\boldsymbol{R}} \psi
-		= c(\boldsymbol{R}) T_{\boldsymbol{R}} \psi
-		= c(\boldsymbol{R}) c(\boldsymbol{R}')
+		T_{\mathbf{R}'} T_{\mathbf{R}} \psi
+		= c(\mathbf{R}) T_{\mathbf{R}} \psi
+		= c(\mathbf{R}) c(\mathbf{R}')
 	\end{equation}
 
 	Eq. (\ref{eq:trans_addition}) can \emph{also} be used to formulate the eigenvalues as such:
 	\begin{equation}
-		T_{\boldsymbol{R}'} T_{\boldsymbol{R}} \psi
-		= T_{\boldsymbol{R} + \boldsymbol{R'}} \psi
-		= c(\boldsymbol{R} + \boldsymbol{R'}) 
+		T_{\mathbf{R}'} T_{\mathbf{R}} \psi
+		= T_{\mathbf{R} + \mathbf{R'}} \psi
+		= c(\mathbf{R} + \mathbf{R'}) 
 	\end{equation}
 
-	In order to satisfy Bloch's theorem, in the form of eq. (\ref{eq:bloch_theorem_restate}), we can come up with an expression for the exponential, $e^{i\boldsymbol{k} \boldsymbol{R}}$ in terms of the eigenvalue, $c(\boldsymbol{R})$ through the following derivation.
+	In order to satisfy Bloch's theorem, in the form of eq. (\ref{eq:bloch_theorem_restate}), we can come up with an expression for the exponential, $e^{i\mathbf{k} \mathbf{R}}$ in terms of the eigenvalue, $c(\mathbf{R})$ through the following derivation.
 
-	We first write an expression for $\boldsymbol{R}$ as the Bravais lattice vector given by
+	We first write an expression for $\mathbf{R}$ as the Bravais lattice vector given by
 	\begin{equation} \label{eq:r_express}
-		\boldsymbol{R} = n_{1} \boldsymbol{a}_{1}
-		+ n_{2} \boldsymbol{a}_{2}
-		+ n_{3} \boldsymbol{a}_{3}
+		\mathbf{R} = n_{1} \mathbf{a}_{1}
+		+ n_{2} \mathbf{a}_{2}
+		+ n_{3} \mathbf{a}_{3}
 	\end{equation}
 
-	where $\boldsymbol{a_{i}}$ are the three primitive vectors of the Bravais lattice, which can be captured by $\boldsymbol{c}$: \todo{Can someone please explain how we can express $c$ this way because I do not get it! Thanks.}
+	where $\mathbf{a_{i}}$ are the three primitive vectors of the Bravais lattice, which can be captured by $\mathbf{c}$: \todo{Can someone please explain how we can express $c$ this way because I do not get it! Thanks.}
 
 	\begin{equation} \label{eq:c_exp}
-			c(\boldsymbol{a}_{i}) = e^{2 \pi i x_{i}}
+			c(\mathbf{a}_{i}) = e^{2 \pi i x_{i}}
 	\end{equation}
 
 	by a suitable choice \todo{yeah I don't know what ``suitable'' means. Please explain} of $x_i$. From successive applications of \ref{eq:c_relation} that
 
 	\begin{equation} \label{eq:c_mult}
-		c(\boldsymbol{R})
-		= c(\boldsymbol{a}_1)^{n_1}
-		c(\boldsymbol{a}_2)^{n_2}
-		c(\boldsymbol{a}_3)^{n_3}
+		c(\mathbf{R})
+		= c(\mathbf{a}_1)^{n_1}
+		c(\mathbf{a}_2)^{n_2}
+		c(\mathbf{a}_3)^{n_3}
 	\end{equation}
 
 	and since
 	\begin{equation} \label{eq:k_with_bi}
-		\boldsymbol{k} = x_1 \boldsymbol{b}_1
-		+ x_2\boldsymbol{b}_2
-		+ x_3 \boldsymbol{b}_3
+		\mathbf{k} = x_1 \mathbf{b}_1
+		+ x_2\mathbf{b}_2
+		+ x_3 \mathbf{b}_3
 	\end{equation}
 
 	where $b_i$ are the reciprocal lattice vectors satisfying
 	\begin{equation} \label{eq:recip_b}
-		\boldsymbol{b_i \cdot a_j}
+		\mathbf{b_i \cdot a_j}
 		= 2 \pi \delta_{ij}
 	\end{equation}
 
 	this means that
 	\begin{equation} \label{eq:c(R)}
-		c(\boldsymbol{R}) 
-		= e^{i \boldsymbol{k} \cdot \boldsymbol{R}}
+		c(\mathbf{R}) 
+		= e^{i \mathbf{k} \cdot \mathbf{R}}
 	\end{equation}
 
-	We can thus choose the eigenstates $\psi$ of $H$ so that for every Bravais lattice vector $\boldsymbol{R}$, we can obtain Bloch's theorem:
+	We can thus choose the eigenstates $\psi$ of $H$ so that for every Bravais lattice vector $\mathbf{R}$, we can obtain Bloch's theorem:
 	\begin{equation} \label{eq:bloch_proof_qm}
-		T_{\boldsymbol{R}} \psi
-		= \psi(\boldsymbol{r} + \boldsymbol{R}) \psi
-		= e^{i \boldsymbol{k} \cdot \boldsymbol{R}}
-	\psi(\boldsymbol{r})
+		T_{\mathbf{R}} \psi
+		= \psi(\mathbf{r} + \mathbf{R}) \psi
+		= e^{i \mathbf{k} \cdot \mathbf{R}}
+	\psi(\mathbf{r})
 	\end{equation}
 	\todo{I think we can add some things from the PDF I sent. We should find out what sources the PDF used and include that}
 
 \section{Form of the Bloch Wave Vector}
 	\todo{Note here that I renamed this section from the BVK Boundary Conditions.}
-	To demonstrate that the wave vector $\boldsymbol{k}$ must be real, we must impose the appropriate boundary conditions. The Born-Von Karman boundary condition was originally presented earlier as
+	To demonstrate that the wave vector $\mathbf{k}$ must be real, we must impose the appropriate boundary conditions. The Born-Von Karman boundary condition was originally presented earlier as
 	\begin{eqnarray} \label{eq:bvk_ch2}
 		\psi(x,y,z+L) &=& \psi(x,y,z), \\ \nonumber
 		\psi(x,y+L,z) &=& \psi(x,y,z), \\
@@ -215,22 +217,22 @@ Biographical Memoirs, Volume 64
 
 	but these boundary conditions apply to a cubic Bravais lattice with side L that is an integral multiple of the lattice constant, $a$. A general form of eq. (\ref{eq:bvk_ch2}) is 
 	\begin{alignat}{2}\label{eq:bvk}
-		\psi(\boldsymbol{r} + N_i \boldsymbol{a}_i)
-		&= \psi(\boldsymbol{r}),
+		\psi(\mathbf{r} + N_i \mathbf{a}_i)
+		&= \psi(\mathbf{r}),
 		&\quad
 		i &= 1,2,3
 	\end{alignat}
 
-	The $\boldsymbol{a}_i$ are the primitive vectors, and the $N_i$ are all integers of order $N^{1/3}$, where $N=N_1N_2N_3$ is the total number of primitive cells in the crystal.
+	The $\mathbf{a}_i$ are the primitive vectors, and the $N_i$ are all integers of order $N^{1/3}$, where $N=N_1N_2N_3$ is the total number of primitive cells in the crystal.
 
 	Applying Bloch's theorem, eq. (\ref{eq:bloch_theorem_restate}) to the boundary condition, eq. (\ref{eq:bvk}), \todo{can someone please explain where the n comes from?} we obtain
 
 	\begin{alignat}{2}\label{eq:bloch_applied}
-		\psi_{n\boldsymbol{k}}
-		(\boldsymbol{r} + N_i \boldsymbol{a}_i)
+		\psi_{n\mathbf{k}}
+		(\mathbf{r} + N_i \mathbf{a}_i)
 		&= 
-		e^{i N_i \boldsymbol{k} \cdot \boldsymbol{a}_i}
-		\psi(\boldsymbol{r}),
+		e^{i N_i \mathbf{k} \cdot \mathbf{a}_i}
+		\psi(\mathbf{r}),
 		&\quad
 		i &= 1,2,3
 	\end{alignat}
@@ -253,40 +255,42 @@ Biographical Memoirs, Volume 64
 	Therefore the general form for allowed Bloch wave vectors is
 
 	\begin{alignat}{3} \label{eq:wave_vector}
-		\boldsymbol{k} =
-		\sum_{i=1}^{3} \frac{m_i}{N_i},
+		\mathbf{k} =
+		\sum_{i=1}^{3} \frac{m_i}{N_i}
+		\mathbf{b_i}
+		,
 		&\quad 
 		&m_i\text{ integral}
 	\end{alignat}
 
-	It follows from eq. (\ref{eq:wave_vector}) that the volume $\Delta\boldsymbol{k}$ of $k$-space per allowed value of $\boldsymbol{k}$ is just the volume of the little parallelepiped with edges $\boldsymbol{b}_i/N_i$:
+	It follows from eq. (\ref{eq:wave_vector}) that the volume $\Delta\mathbf{k}$ of $k$-space per allowed value of $\mathbf{k}$ is just the volume of the little parallelepiped with edges $\mathbf{b}_i/N_i$:
 
 	\begin{equation} \label{eq:deltak}
 		\Delta{k}
 		= 
-		\frac{\boldsymbol{b_1}}{N_1}
+		\frac{\mathbf{b_1}}{N_1}
 		\cdot
 		\left(
-		\frac{\boldsymbol{b_2}}{N_2}
+		\frac{\mathbf{b_2}}{N_2}
 		\times
-		\frac{\boldsymbol{b_3}}{N_3}
+		\frac{\mathbf{b_3}}{N_3}
 		\right)
 		=
 		\frac{1}{N}
-		\boldsymbol{b_1}
+		\mathbf{b_1}
 		\cdot
 		\left(
-		\boldsymbol{b_2}
+		\mathbf{b_2}
 		\times
-		\boldsymbol{b_3}
+		\mathbf{b_3}
 		\right)
 	\end{equation}
 
-	Since $\boldsymbol{b_1} \cdot (\boldsymbol{b_2} \times \boldsymbol{b_3}$ is the volume of a reciprocal lattice primitive cell, eq. (\ref{eq:deltak}) asserts that \emph{the number of allowed wave vectors in a primitive cell of the reciprocal lattice is equal to the number of sites in the crystal}.
+	Since $\mathbf{b_1} \cdot (\mathbf{b_2} \times \mathbf{b_3}$ is the volume of a reciprocal lattice primitive cell, eq. (\ref{eq:deltak}) asserts that \emph{the number of allowed wave vectors in a primitive cell of the reciprocal lattice is equal to the number of sites in the crystal}.
 
 	The volume of a reciprocal lattice primitive cell is $(2π)^3/v$, where $v=V/N$ is the volume of a direct lattice primitive cell, so eq. (\ref{eq:deltak}) can be written in the alternative form:
 	\begin{equation} \label{eq:freedeltak}
-		\Delta \boldsymbol{k}
+		\Delta \mathbf{k}
 		=
 		\frac{(2 \pi)^3}{V}
 	\end{equation}
@@ -295,7 +299,42 @@ Biographical Memoirs, Volume 64
 	\todo{expand upon this}
 
 \section{Proof 2 of Bloch's Theorem}
-	The first proof of Bloch's Theorem allowed us to formulate the expression for the Bloch wave vector as a function of the reciprocal lattice vectors. \todo{correct?} This second proof is useful in later discussions about band energies.
+	The first proof of Bloch's Theorem allowed us to formulate the expression for the Bloch wave vector as a function of the reciprocal lattice vectors. \todo{correct?} This second proof is useful in later discussions pertaining to band energies.
+
+	Using eq. (\ref{eq:wave_vector}), one can always expand any function obeying the Born-von Karman boundary condition, (\ref{eq:bvk}) in the set of all plane waves that satisfy the boundary condition, resulting in wave vectors with the form:
+
+	\begin{equation} \label{eq:waves_q}
+		\psi(\mathbf{r})
+		=
+		\sum_{q}
+		\mathbf{c_q}
+		e^{i\mathbf{q} \cdot \mathbf{r}}
+	\end{equation}
+
+	Because the potential $U(\mathbf{r})$ is periodic in the lattice, its \emph{plane wave expansion} will only contain plane waves with the periodicity of the lattice, thus yielding wave vectors of the reciprocal lattice
+	\todo{since we are dealing with the reciprocal lattice, we don't use G, right? We still use K?}
+
+	\begin{equation} \label{eq:U(r)}
+		U(\mathbf{r})
+		=
+		\sum_{\mathbf{K}}
+		\mathbf{U_K}
+		e^{i \mathbf{K} \cdot \mathbf{r}}
+	\end{equation}
+
+	Where the index over $\mathbf{K}$ indicates summation over all reciprocal lattice vectors.
+
+	The Fourier coefficients $\mathbf{U_K}$ are related to $U(\mathbf{r})$ \todo{A\&M references appendix D here. Let's explain that a bit more.}
+
+	\begin{equation} \label{eq:U_k}
+		\mathbf{U_K}
+		=
+		\frac{1}{v}
+		\int_{cell}
+		d \mathbf{r}
+	\end{equation}
+
+
 
 
 
