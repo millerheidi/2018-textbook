@@ -5,36 +5,39 @@
 
 \listoftodos
 
+\section{To Do:}
+	I think we should organize it by learning objectives, introduction, main text, and summary, as the prof has outlined in the template.
+
+	I think we should go through the notes from his slides to see if there is anything valuable there.
+
+	We need to check the notation for $K$ and $G$ since we should be consistent with the notes and not A\&M
+
+	we might want to write a summary of the main points and equations
+
+	I made the $\mathbf{U_K}$ and the $\mathbf{c_q}$ as vectors, but I don't know if they should be.
+
+
 \section{Preface}
+	\todo{We should somehow rename this section}
 
-\todo{We should somehow rename this section}
+	The writers' goals are:
+	\begin{enumerate}
+		\item To give a clearer picture of the direction of the proof before finding the result
+		\item To explain things that were not fully explained
+		\item To add extra insight and applications to A\&M
+	\end{enumerate}
 
-\todo{I think we should organize it by learning objectives, introduction, main text, and summary, as the prof has outlined in the template.}
+	\todo{I think that the more sources we have, the better it looks.}
 
-\todo{I think we should go through the notes from his slides to see if there is anything valuable there.}
-
-\todo{We need to check the notation for $K$ and $G$ since we should be consistent with the notes and not A\&M}
-
-\todo{we might want to write a summary of the main points and equations}
-
-The writers' goals are:
-\begin{enumerate}
-	\item To give a clearer picture of the direction of the proof before finding the result
-	\item To explain things that were not fully explained
-	\item To add extra insight and applications to A\&M
-\end{enumerate}
-
-\todo{I think that the more sources we have, the better it looks.}
-
-\begin{quotation}
-	``When I started to think about it, I felt that the main problem was to explain how the electrons could sneak by all the ions in a metal so as to avoid a mean free path of the order of atomic distances. Such a distance was much too short to explain the observed resistances, which even demanded that the mean free path become longer and longer with decreasing temperature. But Heitler and London had already shown how electrons could jump between two atoms in a molecule to form a covalent bond, and the main difference between a molecule and a crystal was only that there were many more atoms in a periodic arrangement. To make my life easy, I began by considering wave functions in a one-dimensional periodic potential. By straight Fourier analysis I found to my delight the the wave differed from a a plane wave of free electron only by a periodic modulation.
-	This was so simple that I didn’t think it could be much of a discovery, but when I showed it to Heisenberg he said right away, “That’s it.” Well, that wasn’t quite it yet, and my calculations were only completed in the summer when I wrote my thesis on 'The Quantum Mechanics of Electrons in Crystal Lattices.''
-\end{quotation}
-- Felix Bloch
+	\begin{quotation}
+		``When I started to think about it, I felt that the main problem was to explain how the electrons could sneak by all the ions in a metal so as to avoid a mean free path of the order of atomic distances. Such a distance was much too short to explain the observed resistances, which even demanded that the mean free path become longer and longer with decreasing temperature. But Heitler and London had already shown how electrons could jump between two atoms in a molecule to form a covalent bond, and the main difference between a molecule and a crystal was only that there were many more atoms in a periodic arrangement. To make my life easy, I began by considering wave functions in a one-dimensional periodic potential. By straight Fourier analysis I found to my delight the the wave differed from a a plane wave of free electron only by a periodic modulation.
+		This was so simple that I didn’t think it could be much of a discovery, but when I showed it to Heisenberg he said right away, “That’s it.” Well, that wasn’t quite it yet, and my calculations were only completed in the summer when I wrote my thesis on 'The Quantum Mechanics of Electrons in Crystal Lattices.''
+	\end{quotation}
+	- Felix Bloch
 
 
-These waves are now referred to as "Bloch Waves" or "Bloch States", and they are a fundamental building bloch of condensed matter physics. This was already known in mathematics as Floquet's Theorem, but Bloch discovered its immense implications for quantum mechanics.
-Biographical Memoirs, Volume 64 \todo{cite properly}
+	These waves are now referred to as "Bloch Waves" or "Bloch States", and they are a fundamental building bloch of condensed matter physics. This was already known in mathematics as Floquet's Theorem, but Bloch discovered its immense implications for quantum mechanics.
+	Biographical Memoirs, Volume 64 \todo{cite properly}
 
 \section{Introduction}
 	Recall the free electron and independent electron approximations from the assumptions of the Sommerfeld Model:
@@ -59,7 +62,7 @@ Biographical Memoirs, Volume 64 \todo{cite properly}
 
 	The electronic properties of a crystal can be examined with the Schrödinger equation while maintaining the \textit{independent electron approximation}:
 	\begin{equation} \label{eq:schrod}
-		H\psi=\left(-\frac{\hbar^2}{2m}\mathbf{\nabla}^2 + U(\mathbf{r})\right)\psi = \varepsilon\psi
+		H\psi=\left(-\frac{\hbar^2}{2m}\boldsymbol{\nabla}^2 + U(\mathbf{r})\right)\psi = \varepsilon\psi
 	\end{equation}
 
 	These electrons are known as \textit{Bloch electrons}, and they reduce to ``free electrons'' when the periodic potential, $U(\mathbf{r})$ is equal to zero.
@@ -72,7 +75,8 @@ Biographical Memoirs, Volume 64 \todo{cite properly}
 		u_{n\mathbf{k}}(r)
 	\end{equation}
 
-	where $u_{n\mathbf{k}}(\mathbf{r})$ has the period of the crystal lattice with $u_{n\mathbf{k}}(\mathbf{r}) = u_{n\mathbf{k}}(\mathbf{r} + \mathbf{T})$ \todo{We should explain where the n comes from.}
+	where $u_{n\mathbf{k}}(\mathbf{r})$ has the period of the crystal lattice with $u_{n\mathbf{k}}(\mathbf{r}) = u_{n\mathbf{k}}(\mathbf{r} + \mathbf{T})$
+	where $n$ is a discrete index, called the band index, which is present because there are many different Bloch waves with the same $k$ (each has a different periodic component u).
 	Here, $\mathbf{T}$ is a translation vector of the lattice. This result (eq. \ref{eq:bloch_theorem}), expresses the Bloch theorem:
 	\begin{quotation}
 		The eigenstates of the wave equation can be chosen so that, for every $\mathbf{R}$ in the Bravais Lattice, each $\psi$ has an associated wave vector, $\mathbf{k}$, such that:
@@ -286,7 +290,7 @@ Biographical Memoirs, Volume 64 \todo{cite properly}
 		\right)
 	\end{equation}
 
-	Since $\mathbf{b_1} \cdot (\mathbf{b_2} \times \mathbf{b_3}$ is the volume of a reciprocal lattice primitive cell, eq. (\ref{eq:deltak}) asserts that \emph{the number of allowed wave vectors in a primitive cell of the reciprocal lattice is equal to the number of sites in the crystal}.
+	Since $\mathbf{b_1} \cdot (\mathbf{b_2} \times \mathbf{b_3})$ is the volume of a reciprocal lattice primitive cell, eq. (\ref{eq:deltak}) asserts that \emph{the number of allowed wave vectors in a primitive cell of the reciprocal lattice is equal to the number of sites in the crystal}.
 
 	The volume of a reciprocal lattice primitive cell is $(2π)^3/v$, where $v=V/N$ is the volume of a direct lattice primitive cell, so eq. (\ref{eq:deltak}) can be written in the alternative form:
 	\begin{equation} \label{eq:freedeltak}
@@ -299,6 +303,7 @@ Biographical Memoirs, Volume 64 \todo{cite properly}
 	\todo{expand upon this}
 
 \section{Proof 2 of Bloch's Theorem}
+	\todo{this section is also pretty much verbatim from the text}
 	The first proof of Bloch's Theorem allowed us to formulate the expression for the Bloch wave vector as a function of the reciprocal lattice vectors. \todo{correct?} This second proof is useful in later discussions pertaining to band energies.
 
 	Using eq. (\ref{eq:wave_vector}), one can always expand any function obeying the Born-von Karman boundary condition, (\ref{eq:bvk}) in the set of all plane waves that satisfy the boundary condition, resulting in wave vectors with the form:
@@ -311,7 +316,7 @@ Biographical Memoirs, Volume 64 \todo{cite properly}
 		e^{i\mathbf{q} \cdot \mathbf{r}}
 	\end{equation}
 
-	Because the potential $U(\mathbf{r})$ is periodic in the lattice, its \emph{plane wave expansion} will only contain plane waves with the periodicity of the lattice, thus yielding wave vectors of the reciprocal lattice
+	The $\mathbf{q}$ refers to the primitive vectors in real space. \todo{PLEASE CHECK THIS STATEMENT because I don't know if this is correct!} Because the potential $U(\mathbf{r})$ is periodic in the lattice, its \emph{plane wave expansion} will only contain plane waves with the periodicity of the lattice, thus yielding wave vectors of the reciprocal lattice
 	\todo{since we are dealing with the reciprocal lattice, we don't use G, right? We still use K?}
 
 	\begin{equation} \label{eq:U(r)}
@@ -332,7 +337,139 @@ Biographical Memoirs, Volume 64 \todo{cite properly}
 		\frac{1}{v}
 		\int_{cell}
 		d \mathbf{r}
+		e^{-i \mathbf{K} \cdot \mathbf{r}}
+		U(\mathbf{r})
 	\end{equation}
+
+	The potential energy is allowed to be referenced at any convenient value, so we require the spatial average $\mathbf{U_0}$ of the potential over a primitive cell to vanish:
+
+	\begin{equation} \label{eq:U_0}
+		\mathbf{U_0}
+		=
+		\frac{1}{v}
+		\int_{cell}
+		d \mathbf{r}
+		U(\mathbf{r})
+		= 0
+	\end{equation}
+
+	Note that because the potential $U(\mathbf{r})$ is real, it follows from eq. (\ref{eq:U_k}) that the Fourier coefficients satisfy
+
+	\begin{equation} \label{eq:U_conj}
+		\mathbf{U_{-K}} = \mathbf{U_{K}^*}
+	\end{equation}
+
+	If we assume inversion symmetry (solely for the sake of notation) \todo{really? can we explain here?} \todo{also how would we prove this without inversion symmetry?}
+	so that, for a suitable choice of origin, $U(\mathbf{r}) = U(-\mathbf{r})$, then (\ref{eq:U_k}) implies that $\mathbf{U_K}$ is real. This can be seen by using Euler's formula; $\sin(0) = 0$. This allows us to write \todo{how does this help us?} the Schrödinger equation, eq. (\ref{eq:schrod}) \todo{don't understand what $\mathbf{c_q} is$}
+
+	\begin{equation} \label{eq:hamiltonian}
+		\frac{p^2}{2m} \psi
+		=
+		-\frac{\hbar^2}{2m}
+		\boldsymbol{\nabla}^2 \psi
+		=
+		\sum_{q} \frac{\hbar^2}{2m}
+		q^2 \mathbf{c_q} 
+		e^{i\mathbf{q} \cdot \mathbf{r}}
+	\end{equation}
+
+	Making the substitution $\mathbf{K+q=q'}$ and the fact that eq. (\ref{eq:wave_vector}) is equivalent regardless of whether summing over $\mathbf{q}$ or $\mathbf{q'}$ \todo{explain this because it is not actually a sum over $\mathbf{q}$}.
+
+	Using (\ref{eq:waves_q}) and (\ref{eq:U(r)}), the term in the potential energy can be written 
+	\begin{align} \label{eq:U_simpl1}
+		\mathbf{U} \psi
+		&=
+		\left( \sum_{K}
+		e^{i \mathbf{K} \cdot \mathbf{r}} \right)
+		\left( \sum_{K} \mathbf{c_q}
+		e^{i \mathbf{q} \cdot \mathbf{r}} \right) \\ \nonumber
+		&=		
+		\sum_{\mathbf{Kq}}
+		\mathbf{U_Kc_q}
+		e^{i(\mathbf{K+q}) \cdot \mathbf{r}} \\
+		&=
+		\sum_{\mathbf{Kq'}}
+		\boldsymbol{U}_{{\mathbf{K}{q' {-K}}}}
+		e^{i(\mathbf{q'}) \cdot \mathbf{r}}
+	\end{align}
+
+	\todo{I do not get how we can just eliminate the $K$ in the exponent without doing anything to the $U_K$}
+	\todo{I also don't understand what it means to have an eigenvalue of $\mathbf{q'-K}$}
+
+	We can then change the summation indices in eq. (\ref{eq:U_simpl1}) from $\mathbf{K}$ and $\mathbf{q'}$ to $\mathbf{K'}$ and $\mathbf{q}$ so that the Schrödinger equation becomes
+
+	\begin{equation} \label{eq:SE_1}
+		\sum_{q} e^{i\mathbf{q}\cdot\mathbf{r}}
+		\left\{
+		\left(
+		\frac{\hbar^2}{2m} q^2 - \varepsilon
+		\right) \boldsymbol{c}_{\mathbf{q}}
+		+ \sum_{\mathbf{K'}} \boldsymbol{U_}_\mathbf{K'}
+		\cdot \boldsymbol{c}_\mathbf{q {-K'}}
+		= 0
+	\end{equation}
+
+	\todo{can someone explain explicitly how eq{\ref{eq:hamiltonian}} was used in eq{\ref{eq:SE_1}}}?
+
+	The plane waves satisfying the Born-von Karman boundary condition are orthogonal \todo{can we explicitly say why?}, so the coefficients corresponding to separate terms in (\ref{eq:SE_1}) vanish \todo{how does this work mathematically?}
+
+	therefore for all allowed wave vectors $\mathbf{q}$,
+
+	\begin{equation} \label{eq:q_1}
+		\left(
+		\frac{\hbar^2}{2m} q^2
+		- \varepsilon
+		\right) \boldsymbol{c}_{\mathbf{q}}
+		+ \sum_{K'} \boldsymbol{U}_\mathbf{K'}
+		\cdot \boldsymbol{c}_\mathbf{q{-K'}}
+		= 0
+	\end{equation}
+
+	We can write $\mathbf{q=k-K}$ where $\mathbf{K}$ is a reciprocal lattice vector chosen so that $\mathbf{k}$ lies in the first Brillouin zone. \todo{Please explain how this comes about}. Eq. (\ref{eq:q_1}) becomes
+
+	\begin{equation} \label{eq:q_2}
+		\left(
+		\frac{\hbar^2}{2m}
+		(\mathbf{k} - \mathbf{K})^2 - \varepsilon
+		\right) \boldsymbol{c}_{\mathbf{k {-K}}}
+		+ \sum_{K'} \boldsymbol{U}_\mathbf{K'}
+		\boldsymbol{c}_\mathbf{k-K-K'}
+		= 0
+	\end{equation}
+
+	If we make the change of variables \todo{I don't understand how we can make this change of variables?} $\mathbf{K'}\rightarrow \mathbf{K'-K}$,
+
+	\begin{equation} \label{eq:SE_momentum}
+		\left(
+		\frac{\hbar^2}{2m}
+		(\mathbf{k-\mathbf{K}})^2 - \varepsilon
+		\right) \boldsymbol{c}_{\mathbf{k-K}}
+		+ \sum_{K'} \boldsymbol{U}_{\mathbf{K'-K}}
+		\boldsymbol{c}_{\mathbf{k-K'}}
+		= 0
+	\end{equation}
+
+	These are simplifications of the Schrödinger equation in momentum space. \todo{what do they mean by momentum space if it is not k space?} The potential, $\boldsymbol{U}_\mathbf{k}$ is nonvanishing only when $\boldsymbol{k}$ is a vector of the reciprocal lattice.
+
+	For fixed $\mathbf{k}$ in the first Brillouin zone, the set of equations \ref{eq:SE_momentum} for all reciprocal lattice vectors $\mathbf{K}$ couples only those coefficients $\boldsymbol{c}_\mathbf{k}$, $\boldsymbol{c}_\mathbf{k-K}$, $\boldsymbol{c}_\mathbf{k-K'}$, ... whose wave vectors differ from $\mathbf{k}$ by a reciprocal lattice vector. As a result, the original problem has been separated into $N$ independent problems: one for each allowed value of $\mathbf{k}$ in the first Brillouin zone. Each problem has solutions that are superpositions of plane waves containing only the wave vector $\mathbf{k}$ and wave vectors differing from $\mathbf{k}$ by a reciprocal lattice vector. \todo{the above was copied. I don't know how to change it. If we could add something that would be nice}
+
+	Using the complex exponentials as a basis (\ref{eq:waves_q}, the wave function will be of the form
+
+	\begin{equation} \label{eq:waves_k}
+		\psi_{\mathbf{k}}
+		= \sum_{\mathbf{k-K}}
+		e^{i\mathbf{k-K} \cdot \mathbf{r}}
+	\end{equation}
+
+	We can therefore write the wave function as \todo{I don't get how eq. \ref{}}
+
+	\begin{equation} \label{eq:psi_proof}
+		\psi_{\mathbf{k}}(\mathbf{r})
+		= e^{i\mathbf{k} \cdot \mathbf{r}}
+		\left(\sum_
+		\right)
+	\end{equation}
+
 
 
 
