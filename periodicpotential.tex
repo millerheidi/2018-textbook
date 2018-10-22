@@ -457,16 +457,18 @@
 
 	\begin{equation} \label{eq:waves_k}
 		\psi_{\mathbf{k}}
-		= \sum_{\mathbf{k-K}}
-		e^{i\mathbf{k-K} \cdot \mathbf{r}}
+		= \sum_{\boldsymbol{K}}
+		\boldsymbol{c}_{\mathbf{k-K}}
+		e^{i(\mathbf{k-K}) \cdot \mathbf{r}}
 	\end{equation}
 
-	We can therefore write the wave function as \todo{I don't get how eq. \ref{}}
+	We can therefore write the wave function as \todo{I don't get how eq. \ref{eq:waves_q}}
 
 	\begin{equation} \label{eq:psi_proof}
 		\psi_{\mathbf{k}}(\mathbf{r})
 		= e^{i\mathbf{k} \cdot \mathbf{r}}
-		\left(\sum_
+		\left(\sum_{K} \boldsymbol{c}_{\mathbf{k-K}}
+		e^{-i\mathbf{K\cdot r}}
 		\right)
 	\end{equation}
 
