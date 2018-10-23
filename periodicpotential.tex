@@ -16,6 +16,8 @@
 
 	I made the $\mathbf{U_K}$ and the $\mathbf{c_q}$ as vectors, but I don't know if they should be.
 
+	Spell check/ syntax
+
 \section{Preface}
 	\todo{We should somehow rename this section}
 
@@ -508,7 +510,49 @@
 		However, $\hbar \mathbf{k}$ is known as the crystal momentum \todo{expand upon this- see chapter 12- response of Bloch e- to EM field} of the electron. \mathbf{k} is a quantum number characteristic of the translational symmetry of a periodic potential, just as the momentum $\mathbf{p}$ is a quantum number characteristic of the fuller translational symmetry of free space. \todo{do not get this- explain}
 
 	\subsection{First Brillouin zone}
-		
+		The Bloch wave vector $\mathbf{k}$ can be confined to the first Brillouin zone, or any other primitive cell of the reciprocal lattice. This is because any $\mathbf{k'}$ not in the first Brillouin zone can be written as
+
+			\begin{equation} \label{k_prime}
+				\mathbf{k'=k+K}
+			\end{equation}
+
+		where $\mathbf{K}$ is a reciprocal lattice vector and $\mathbf{k'}$ is not in the first zone. \todo{AM says k, not kprime here!!} Since $e^{i\mathbf{K \cdot R}}=1$ for any reciprocal lattice vector, if the Bloch form (\ref{eq:bloch_theorem_restate}) holds for $\boldsymbol{k'}$, it will also hold for $\boldsymbol{k}$.
+
+	\subsection{The index $n$ and eigenvalues}
+		The index $n$ appears in Bloch's theorem because for a given $\mathbf{k}$, there are many solutions to the Schrödinger equation (\ref{eq:schrod}). To prove this, we look at the solutions to (\ref{eq:schrod}) with the Bloch form
+
+		\begin{equation*}
+			\psi(\mathbf{r})
+			= e^{i\mathbf{k\cdot r}}
+			u(\mathbf{r})
+		\end{equation*}
+
+		where $\mathbf{k}$ is fixed and $u$ has the periodicity of the Bravais lattice. Substituting this into the Schrödinger equation, $u$ is determined by the eigenvalue problem
+
+		\begin{align} \label{eq:eigenvalue}
+			H_{\mathbf{k}} u_{\mathbf{k}} (\mathbf{r})
+			&= \left( \frac{\hbar^2}{2m}
+			\left(\frac{1}{i} \boldsymbol{\nabla}
+			+ \mathbf{k} \right)^2
+			+ U(\mathbf{r}) \right)
+			u_\mathbf{k} (\mathbf{r}) \\
+			&= \varepsilon_{\mathbf{k}} 
+			u_\mathbf{k}(\mathbf{r})
+		\end{align}
+
+		with the boundary condition
+
+		\begin{equation*}
+			u_\mathbf{k} (\mathbf{r})
+			= u_\mathbf{k} (\mathbf{r} + \mathbf{R})
+		\end{equation*}
+
+		Because of the boundary condition, we can regard (\ref{eq:eigenvalue}) restricted to a single primitive cell of the crystal. Because it is set in a fixed finite volume, we expect on general grounds to find an infinite family of solutions with discretely spaced eigenvalues, labeled with the band index $n$.
+
+		According to (\ref{eq:eigenvalue}), the wave vector $\mathbf{k}$ appears only as a parameter in the Hamiltonian $H_{\mathbf{k}}$, which manes that the energy levels for a given $\mathbf{k}$ vary continuously as $\mathbf{k}$ varies. Therefore, we arrive at a description of the levels in a periodic potential in terms of a family of continuous functions $\varepsilon_{n} (\mathbf{k})$. \todo{i don't understand this. we should explain}
+
+	\subsection{The index $n$ and band structure}
+
 
 
 
