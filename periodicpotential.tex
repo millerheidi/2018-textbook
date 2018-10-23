@@ -24,7 +24,7 @@
 	The writers' goals are:
 	\begin{enumerate}
 		\item To give a clearer picture of the direction of the proof before finding the result
-		\item To explain things that were not fully explained
+		\item To explain things that were not fully explained, and answer questions we ourselves had when reading the document
 		\item To add extra insight and applications to A\&M
 	\end{enumerate}
 
@@ -507,7 +507,7 @@
 
 		which is not a constant times $\psi_{n\mathbf{k}}$; i.e. $\psi_{n\mathbf{k}}$ is not a momentum eigenstate. \todo{in which case would it be? when the gradient of u is zero? when is that?}
 
-		However, $\hbar \mathbf{k}$ is known as the crystal momentum \todo{expand upon this- see chapter 12- response of Bloch e- to EM field} of the electron. \mathbf{k} is a quantum number characteristic of the translational symmetry of a periodic potential, just as the momentum $\mathbf{p}$ is a quantum number characteristic of the fuller translational symmetry of free space. \todo{do not get this- explain}
+		However, $\hbar \mathbf{k}$ is known as the crystal momentum \todo{expand upon this- see chapter 12- response of Bloch e- to EM field} of the electron. $\mathbf{k}$ is a quantum number characteristic of the translational symmetry of a periodic potential, just as the momentum $\mathbf{p}$ is a quantum number characteristic of the fuller translational symmetry of free space. \todo{do not get this- explain}
 
 	\subsection{First Brillouin zone}
 		The Bloch wave vector $\mathbf{k}$ can be confined to the first Brillouin zone, or any other primitive cell of the reciprocal lattice. This is because any $\mathbf{k'}$ not in the first Brillouin zone can be written as
@@ -563,22 +563,26 @@
 
 
 		The energy levels of an electron in a periodic potential can thus be expressed in terms of a family of continuous functions $\varepsilon_{n\mathbf{k}}$ (or $\varepsilon_{n}(\mathbf{k}$), each with the periodicity of the reciprocal lattice. This is referred to as the \emph{band structure} of the solid. \todo{so does this mean that we have wavefunctions for each energy, labeled by $n$, and these wavefunctions are functions of $\mathbf{k}$?}
-		
 
+		\todo{can we briefly explain what a "band" is, even though it is discussed in Chapter 10?}
 
+		The levels $\varepsilon_n(\mathbf{k})$ lie in the band energies between the upper and lower bound energies since $\varepsilon_n(\mathbf{k})$ is periodic in $\mathbf{k}$ and continuous.
+		\todo{I don't understand what the "upper and lower bounds" are. }
 
+	\subsection{Non-vanishing mean velocity}
+		It can be shown (see Appendix E of AM) \todo{cite this} that an electron in a level specified by band index $n$ and wave vector $\mathbf{k}$ has a nonvanishing mean velocity given by
 
+		\begin{equation} \label{eq:mean_v}
+			\mathbf{v}_n(\mathbf{k})
+			= \frac{1}{\hbar}
+			\boldsymbol{\nabla}_\mathbf{k}
+			\varepsilon_n (\mathbf{k})
+		\end{equation}
 
+		\todo{explain a little more about where this comes from} This asserts that there are stationary (i.e. time-independent) levels for an electron in a periodic potential in which, in spite of the interaction of the electron with the fixed lattice of ions, it moves forever without any degradation of its mean velocity. This contrasts to the Drude model in which collisions were encounters between the electron and a static ion. \todo{Did the Drude model have that time constant, $\tau$, that prevented a mean velocity? Let's explain that here.}
+		\todo{explain a little what happens in chapters 12 and 13 with the mean velocity}
 
-
-
-
-
-
-
-
-
-
-
+\section{The Fermi Surface}
+	The ground state of 
 
 
