@@ -16,7 +16,6 @@
 
 	I made the $\mathbf{U_K}$ and the $\mathbf{c_q}$ as vectors, but I don't know if they should be.
 
-
 \section{Preface}
 	\todo{We should somehow rename this section}
 
@@ -404,8 +403,9 @@
 		\left(
 		\frac{\hbar^2}{2m} q^2 - \varepsilon
 		\right) \boldsymbol{c}_{\mathbf{q}}
-		+ \sum_{\mathbf{K'}} \boldsymbol{U_}_\mathbf{K'}
+		+ \sum_{\mathbf{K'}} \boldsymbol{U}_{\mathbf{K'}}
 		\cdot \boldsymbol{c}_\mathbf{q {-K'}}
+		\right\}
 		= 0
 	\end{equation}
 
@@ -471,6 +471,45 @@
 		e^{-i\mathbf{K\cdot r}}
 		\right)
 	\end{equation}
+
+	This is of the Bloch form (\ref{eq:bloch_theorem}) with the periodic function $u(\mathbf{r})$ given by
+
+	\begin{equation} \label{eq:u_r}
+		u(\mathbf{r}) = 
+		\sum_{\mathbf{K}} 
+		\boldsymbol{c}_{\mathbf{k-K}}
+		e^{-i\mathbf{K \cdot r}}
+	\end{equation}
+
+	There are infinitely many solutions to the infinite set of equations (\ref{eq:SE_momentum}) for a given $\mathbf{k}$, classified by the band index $n$.
+
+\section{Remarks about Bloch's Theorem}
+	\subsection{Crystal momentum}
+		Bloch's theorem introduces a wave vector $\mathbf{k}$ in eq. (\ref{eq:bloch_theorem}) and eq. (\ref{eq:k_with_bi}), which plays the same fundamental role in the general problem of motion in a periodic potential that the free electron wave vector $\mathbf{k}$ plays in the Sommerfeld theory. \todo{What is this fundamental role?!?}
+
+		However, the free electron wave vector is $\mathbf{p}/\hbar$, where $\mathbf{p}$ is the momentum of the electron. However, the Bloch vector $\mathbf{k}$ is not proportional to the electronic momentum; the Hamiltonian does not have complete translational invariance in the presence of a nonconstant potential, so its eigenstates will not be simulataneous eigenstates of the momentum operator. \todo{Can we show why the Hamiltonian doesn't have translational invariance?} When we apply the momentum operator, $\mathbf{p}=(\hbar/i)\boldsymbol{\nabla}$ on $\psi_{n\mathbf{k}}$ we obtain
+
+		\begin{align} \label{momentum}
+			\frac{\hbar}{i}\boldsymbol{\nabla}
+			\psi_{n\mathbf{k}}
+			&= \frac{\hbar}{i}\boldsymbol{\nabla}
+			\left(
+			e^{i\mathbf{k \cdot r}}
+			u_{n\mathbf{k}}(r)
+			\right) \\
+			&= \hbar \mathbf{k} \psi_{n\mathbf{k}}
+			+ e^{i\mathbf{k \cdot r}}
+			\frac{\hbar}{i} \boldsymbol{\nabla}
+			u_{n\mathbf{k}} (r)
+		\end{align}
+
+		which is not a constant times $\psi_{n\mathbf{k}}$; i.e. $\psi_{n\mathbf{k}}$ is not a momentum eigenstate. \todo{in which case would it be? when the gradient of u is zero? when is that?}
+
+		However, $\hbar \mathbf{k}$ is known as the crystal momentum \todo{expand upon this- see chapter 12- response of Bloch e- to EM field} of the electron. \mathbf{k} is a quantum number characteristic of the translational symmetry of a periodic potential, just as the momentum $\mathbf{p}$ is a quantum number characteristic of the fuller translational symmetry of free space. \todo{do not get this- explain}
+
+	\subsection{First Brillouin zone}
+		
+
 
 
 
