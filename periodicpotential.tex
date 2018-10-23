@@ -18,6 +18,8 @@
 
 	Spell check/ syntax
 
+	Include a section about why the reciprocal space becomes so important here.
+
 \section{Preface}
 	\todo{We should somehow rename this section}
 
@@ -50,6 +52,48 @@
 
 
 	Although the free electron approximation provides insight into properties of metals, such as heat capacity, thermal conductivity, and electrical conductivity, it does not account for the differences between metals, semiconductors, and insulators, and it cannot account for positive values of the Hall coefficient. In addition, conduction electrons in the metal do not correctly correspond to the number of valence electrons in free atoms. The purpose of this chapter is to set the stage for understanding band structure.
+
+\section{Perfect crystal approximation}
+    In this chapter, a perfect crystal is considered. But it is important to know that it is impossible to have the perfect periodicity. This means that there are always some defects existed in a crystalline material. There are different types of defects in a crystalline material such as grain boundaries, twin boundaries, dislocations, and vacancies, to name but a few. By controlling the fabrication process one could produce a single crystal material without any dislocation. However, it is impossible to produce a material without vacancies. This could be proved by evaluating the Gibbs free energy of system. Consider $X_{v}^{e}$ is equilibrium vacancy concentration which is according to the minimum Gibbs free energy of system ($\Delta G$). In order to calculate $\Delta G$ consider two components existed in the system, atoms and vacancies. From thermodynamics we have:
+    \begin{equation} \label{eq:Gibbs_1}
+        G_{2} = G_{1} +\Delta G
+    \end{equation}
+    $G_{2}$ is the final state and $G_{1}$ is the initial state.
+    \begin{equation} \label{eq:Gibbs_2}
+        \Delta G = \Delta H - T\Delta S
+    \end{equation}
+    The increase in the enthalpy of the system is directly proportional to the number of vacancies added, as the equilibrium concentration of vacancies is small and vacancy-vacancy interactions can be ignored.
+    \begin{equation*}
+        \Delta H = X_{v}\Delta H_{v}
+    \end{equation*}
+    $X_{v}$ is the mole fraction vacancies, and $\Delta H_{v}$ is the increase in enthalpy per mole of vacancies added to system.\newline
+    In the case of $\Delta S$ there are to terms need to be considered. The first term is the thermal entropy per mole of vacancies, $\Delta S_{v}$. The second one which has the largest contribution, is the configurational entropy, $\Delta S_{mix}$. The total change in entropy is:
+    \begin{equation*}
+        \Delta S = X_{v}\Delta S_{v} + \Delta S_{mix}
+    \end{equation*}
+    \begin{equation*}
+        \Delta S = X_{v}\Delta S_{v} + Kln(\omega)
+    \end{equation*}
+    \begin{equation*}
+        \Delta S = X_{v}\Delta S_{v} - R(X_{v}ln(X_{v})+(1-X_{v})ln(1-X_{v}))
+    \end{equation*}
+    Finally, according equation \ref{eq:Gibbs_1}:
+    \begin{equation} \label{eq:Gibbs_3}
+        G_{2} = G_{1} + \Delta G = G_{1} + X_{v}\Delta H_{v} - TX_{v}\Delta S_{v} - RT(X_{v}ln(X_{v})+(1-X_{v})ln(1-X_{v}))
+    \end{equation}
+    Now the minimum of $G_{2}$ can be calculated by the differentiating equation \ref{eq:Gibbs_3}:
+    \begin{equation*}
+        \left.\frac{dG}{dX_{v}}\right|_{X_{v}=X_{v}^{e}} = 0
+    \end{equation*}
+    As mentioned above, $X_{v}^{e}$ is small, $X_{v}^{e} \ll 1$, then equilibrium concentration of vacancies is:
+    \begin{equation*}
+        \Delta H_{v} - T\Delta S_{v} + RTln(X_{v}^{e}) = 0
+    \end{equation*}
+    \begin{equation} \label{eq:vacancy}
+        X_{v}^{e} = exp\frac{\Delta S_{v}}{R}.exp(\frac{-\Delta H_{v}}{RT})
+    \end{equation}
+    It is good to know that, practically, $\Delta H_{v}$ is in the order of 1 ev/atom.\newline
+    According to equation \ref{eq:vacancy}, it is impossible to find a perfect crystal without any vacancies or defects. In the following, we consider the ideal perfect crystal with the periodic potential.
 
 \section{Periodic Potential}
 
@@ -293,7 +337,47 @@
 
 	Since $\mathbf{b_1} \cdot (\mathbf{b_2} \times \mathbf{b_3})$ is the volume of a reciprocal lattice primitive cell, eq. (\ref{eq:deltak}) asserts that \emph{the number of allowed wave vectors in a primitive cell of the reciprocal lattice is equal to the number of sites in the crystal}.
 
-	The volume of a reciprocal lattice primitive cell is $(2π)^3/v$, where $v=V/N$ is the volume of a direct lattice primitive cell, so eq. (\ref{eq:deltak}) can be written in the alternative form:
+	The volume of a reciprocal lattice primitive cell is $(2π)^3/v$. This can be proved by considering reciprocal and direct bravais lattice vectors.
+	Consider $a_{1}$, $a_{2}$, and $a_{3}$  are three primitive vectors of direct bravais lattice. then the volume of direct primitive bravais lattice is:
+	\begin{equation*}
+		\nu = a_{1}.(a_{2}\times a_{3})
+	\end{equation*}
+	The reciprocal lattice vectors are:
+	\begin{equation*}
+		b_{1} = 2\pi.\frac{a_{2}\times a_{3}}{\nu}
+	\end{equation*}
+	\begin{equation*}
+		b_{2} = 2\pi.\frac{a_{3}\times a_{1}}{\nu}
+	\end{equation*}
+	\begin{equation*}
+		b_{3} = 2\pi.\frac{a_{1}\times a_{2}}{\nu}
+	\end{equation*}
+	The volume of reciprocal lattice is:
+	\begin{equation*}
+		\nu_{reciprocal} = b_{1}.(b_{2}\times b_{3})
+	\end{equation*}
+	\begin{equation*}
+		\nu_{reciprocal} = b_{1}.(\frac{4\pi^2}{\nu^2})(a_{3}\times a_{1})\times(a_{1}\times a_{2})
+	\end{equation*}
+	\begin{equation}\label{eq:vol_1}
+		\nu_{reciprocal} = (\frac{8\pi^3}{\nu^3})(a_{2}\times a_{3}).[(a_{3}\times a_{1})\times(a_{1}\times a_{2})]
+	\end{equation}
+	From cross products, we know that:
+	\begin{equation}\label{eq:cross_product}
+		a\times(b\times c) = (a.c)b - (a.b)c
+	\end{equation}
+	Now if equation \ref{eq:cross_product} is applied to the right side of equation \ref{eq:vol_1}:
+	\begin{equation*}
+		\nu_{reciprocal} = (\frac{8\pi^3}{\nu^3})(a_{2}\times a_{3}).[[(a_{3}\times a_{1}).a_{2}]a_{1}-[(a_{3}\times a_{1}).a_{1}]a{2}] 
+	\end{equation*}
+	\begin{equation*}
+		\nu_{reciprocal} = (\frac{8\pi^3}{\nu^3})(a_{2}\times a_{3}).[[\nu]a_{1}-[0]a{2}]=  (\frac{8\pi^3}{\nu^3})(a_{2}\times a_{3}).(\nu a_{1})
+	\end{equation*}
+	\begin{equation*}
+		\nu_{reciprocal} =  (\frac{8\pi^3}{\nu^2})(a_{2}\times a_{3}).(a_{1}) = \frac{8\pi^3}{\nu} 
+	\end{equation*}
+    where $v=V/N$ is the volume of a direct lattice primitive cell. and V is the volume of solid.
+	so eq. (\ref{eq:deltak}) can be written in the alternative form:
 	\begin{equation} \label{eq:freedeltak}
 		\Delta \mathbf{k}
 		=
@@ -582,7 +666,20 @@
 		\todo{explain a little more about where this comes from} This asserts that there are stationary (i.e. time-independent) levels for an electron in a periodic potential in which, in spite of the interaction of the electron with the fixed lattice of ions, it moves forever without any degradation of its mean velocity. This contrasts to the Drude model in which collisions were encounters between the electron and a static ion. \todo{Did the Drude model have that time constant, $\tau$, that prevented a mean velocity? Let's explain that here.}
 		\todo{explain a little what happens in chapters 12 and 13 with the mean velocity}
 
-\section{The Fermi Surface}
-	The ground state of 
+\section{The Fermi Surface} \todo{heidi will rephrase the whole section}
+	The ground state of $N$ \emph{free electrons} \todo{why do they mention that they are not distinguishing between the number of conduction electrons and the number of primitive cells?} is constructed by occupying all one-electron levels $\mathbf{k}$ with energies $\varepsilon (\mathbf{k}) = \hbar^2 k^2 / 2m$ less than $\varepsilon_F$, where $\varepsilon_F$ is determined by requiring the total number of one-electron levels with energies less than $\varepsilon_F$ to be equal to the total number of electrons. 
+	The ground state of $N$ \emph{Bloch electrons} is similarly constructed, except that the one-electron levels are now labeled by quantum numbers $n$ and $\mathbf{k}$, $\varepsilon_F$ does not have the explicit free electron form \todo{what form is this?}, and $\mathbf{k}$ must be confined to a single primitive cell of the reciprocal lattice if each level is to be counted only once. When the lowest of these levels are filled by a specified number of electrons, two quite distinct types of configuration can result: \todo{refrase this and the items below}
+	\begin{enumerate}
+		\item A certain number of bands may be completely filled with all others remaining epty. The difference in energy between the highest occupied level and lowest unoccupied level (i.e. between the "top" of the highest occupied band and the "bottom" of the lowest empty band) is known as the \emph{band gap}. We shall find that solids with a band gap greatly in excess of $k_BT$ ($T$ near room temperature) are insulators. If the band gap is equal to the number of primitive cells in the crystal \todo{see page 136} and because each level can accommodate two electrons (one of each spin), a configuration with a band gap can arise (though it need not) only if the number of electrons per primitive cell is even. \todo{read chapter 9}
+		\item A number of bands may be partially filled. When this occurs, the energy of the highest occupied level, the Fermi energy $\varepsilon_F$, lies within the energy range of one or more bands. For each partially filled band there will be a surface in $k$-space separating the occupied from the unoccupied levels. The set of all such surfaces is known as the \emph{Fermi surface} and is the generalization to Bloch electrons of the free electron Fermi sphere. The parts of the Fermi surface arising from individual partially filled bands are known as \emph{branches} of the Fermi surface. In many important cases, the Fermi surface is entirely within a single band, and generally it is found to lie within a fairly small number of bands. \todo{see chapter 15} A solid has metallic properties provided that a Fermi surface exists. \todo{see chapter 12}
+	\end{enumerate}
 
+	Analytically, the branch fo the Fermi surface in the $n$th band is that surface in $k$-space (if there is one) determined by
+	\begin{equation} \label{eq:e_k}
+		\varepsilon_n(\mathbf{k}) = \varepsilon_F
+	\end{equation}
 
+	Thus the Fermi surface is a constant energy surce (or set of constant energy surfaces) \todo{don't know why a set} in $k$-space, just as the more familiar equipotentials of electrostatic theory are constant energy surfaces in real space.
+	If $\varepsilon_F$ is generally defined as the energy separating the highest occupied from the lowest unoccupied level, then it is not uniquely specified in a solid with an energy gap, since any energy in the gap meets this test. People nevertheless speak of ``\emph{the} Fermi energy'' of an intrinsic semiconductor. What they mean is the chemical potential, which is well defined at any nonzero temperature \todo{see appendix B}. As $T\rightarrow 0$, the chemical potential of a solid with an energy gap approaches the energy at the middle of the gap (page 575), and one sometimes finds it asserted that this is the ``Fermi energy'' of a solid with a gap. With either the correct (undetermined) or colloquial definition of $\varepsilon_F$, (\ref{eq:e_k}) asserts that solids with a gap have no Fermi surface.
+
+	Since the $\varepsilon_n(\mathbf{k})$ are periodic in the recprocal lattice, the complete solution to (\ref{eq:e_k}) for each $n$ is a $k$-space surface with the periodicity of the reciprocal lattice. When a branch of the Fermi surface is represented by the full periodic structure, it is said to be described in a \emph{repeated zone scheme}. Often, however, it is preferable to take just enough of each branch of the Fermi surface so that every physically distinct level is represented by just one point of the surface. This is acheived by representing each branch by that portion of the full periodic surface contained within a single primitive cell of the reciprocal lattice. Such a representation is described as a \emph{reduced zone scheme}. The primitive cell chosen is often, but not always, the first Brillouin zone. \todo{see ch 9 and 15}
